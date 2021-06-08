@@ -1,0 +1,122 @@
+
+<div class="flex py-16 px-8" >
+  <img src="./../../assets/clipboard.svg" class="w-8 h-8" style=" margin-left: 10px;  margin-top: -5px;">
+<h1 class="text-blue-500 font-bold px-6 ">Dossier N° 695231</h1>
+</div> 
+<div class="flex center " >
+  <img src="./../../assets/clipboard.png" class="w-8 h-8" style="margin-top: 2px; margin-left: 10px;">
+<h1 class="text-gray-900 font-medium px-2 py-2">Expertise</h1>
+</div>
+<div class="  Container-3 center py-4">
+            
+  <button class=" w-80 font-bold flex-shrink-0 text-white border-2 border-blue-500 bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style=" margin-left: -8rem; width: 25rem;" onclick="document.getElementById('id01').style.display='block'">PLANIFIER LA VISIO EXPERTISE</button>
+
+</div>
+
+<div class="px-8 py-16 ">
+<div class="flex space-x-4   border-1 border-gray-700 rounded-lg px-4 " style="width:980px; height: 130px;">
+  <div class="flex" >
+      <img src="./../../assets/picture.svg" class="w-8 h-8" style="margin-top: 2px; margin-left: 10px;">
+  <h1 class="text-gray-900 font-medium px-2 py-2">Dépot des images</h1>
+  </div>
+      
+                  <div class="relative border-dotted h-32   flex justify-center items-center hover:bg-blue-100 rounded-full" style="margin-left: 110px;">
+                      <div class="absolute">
+                          <div class="flex flex-col items-center"> <img src="./../../assets/upload.svg" class="w-16 h-16"> <span class="block text-gray-900 font-normal">Glisser les photos ici</span><div class="flex"><span class="block text-gray-900 font-normal">Ou </span><P class="block text-blue-600 font-normal">Parcourir</P></div> </div>
+                      </div> <input type="file"  class="h-full w-full opacity-0" name="file">
+                  </div>
+
+</div>
+</div>
+<div style="margin-top: -28rem;" >
+<app-table-item></app-table-item>
+</div>
+
+
+
+<!-- Popup Modal 1 -->
+<form>
+  <div id="id01" class="w3-modal">
+    <div class="w3-modal-content rounded-lg px-16 2">
+      <header class="mb-8 font-bold text-black" style="margin-left:190px">
+        <span onclick="document.getElementById('id01').style.display='none'"
+          class="w3-button w3-display-topright">&times;</span>
+      </header>
+     
+      <div id="profile" class="px-32">
+        <div class="user-top py-4 px-8">
+
+          <div class=" px-2 align border-2 border-blue-500 rounded-full w-full mb-2">
+            <tr *ngFor="let profile of user" class="align flex space-x-4">
+              <div style="margin-top: 5px;">
+                <p-avatar image="assets/user.png" shape="circle" id="client-img" size="xlarge"></p-avatar>
+              </div>
+
+              <h5 style="margin-left: 90px;">{{profile.name}}</h5>
+              <a style="margin-left: 90px;">
+                <td id="userIcon"><img src="../../assets/Icon Button.svg" class="w-16 h-16"></td>
+              </a>
+
+            </tr>
+          </div>
+          <div class="px-40">
+            <div class="flex ">
+              <img src="./../../assets/green-circle.svg" class="w-3 h-3 "
+                style="margin-top: 15px; margin-left: 1px;">
+              <p class="text-gray-900 font-medium px-2 " style="margin-top: 10px;">En Ligne</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="margin-left: 12rem;">
+        <h1>Veuillez choisir un rendez-vous pour le suivi sur terrain</h1>
+      </div>
+      <div> 
+        <!-- <div class="container mt-5">
+          <form class="row">
+            <div class="form-group col-6">
+            <label for="datepicker"><i class="fa fa-calendar"></i> Date</label>
+            <input type="text" class="form-control" id="datepicker" readonly>
+            </div>
+          </form>
+        </div>    -->
+        
+        <div style="margin-left: 17rem;">
+          <div style="margin-left: 0.75rem;">
+        <mat-form-field>
+          <div><label style="margin-left: 1.75rem;">Date de rendez-vous</label></div>
+            <div class="relative">
+              <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-white" style="margin-top: -0.5rem;">
+                <img src="https://img.icons8.com/material-sharp/24/000000/calendar--v2.png"/>
+              </div>
+            <input type="text"  mdbInput matInput value="jj/mm/aa"
+            required  class=" pl-5 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;" id="datepicker" readonly>
+          </div>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <div><label style="margin-left: 1.5rem; width: 10rem;">Heure de rendez-vous</label></div>
+            <div class="relative">
+              <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-white" style="margin-top: -0.5rem;">
+                <img src="https://img.icons8.com/material/24/000000/clock--v1.png"/>
+              </div>
+            <input type="text"  mdbInput matInput  data-clocklet="format: h:mm a" value="00:00 pm"
+            required  class=" pl-5 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0; z-index: 13;" id="datepicker" readonly>
+          </div>
+        </mat-form-field>
+        </div>
+        <div>
+          <button
+            class=" w-80 mb-4 font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+            style="margin-left: -2.5rem" routerLink="/expert" routerLinkActive="active">Continuer</button>
+        </div>
+      </div>
+      
+      </div>
+      
+
+    </div>
+  </div>
+</form>

@@ -1,0 +1,68 @@
+
+<body style="margin-left: -4rem;">
+<br>
+
+<img class="  " style="margin-left:650px; width:155px; height:125px;" alt="" src="./../../assets/login-smart.png">
+<app-message></app-message>
+<div class=" flex  px-4 py-4  bg-white" style="margin-left: 9rem;">
+  <div class="flex flex-col bg-white  px-4   rounded-md w-full max-w-md">
+    <div class="font-medium  text-xl sm:text-2xl uppercase text-gray-800">Connexion</div>
+    <label class="text-gray-700">
+      Se connecter en entrant l'identifiant et le mot de passe correspondants à votre compte
+    </label>
+    <div class="mt-4">
+      <form action="#">
+        <div class="flex flex-col mb-6">
+        
+          <div class="relative">
+            <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+              <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                <path d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207" />
+              </svg>
+            </div>
+
+            <input id="email" type="email" name="email" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Identifiant" [(ngModel)]="email" />
+          </div>
+        </div>
+        <div class="flex flex-col mb-6">
+         
+          <div class="relative">
+            <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-gray-400">
+              <span>
+                <svg class="h-6 w-6" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewBox="0 0 24 24" stroke="currentColor">
+                  <path d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
+                </svg>
+              </span>
+            </div>
+
+            <input id="password" type="password" name="password" class="text-sm sm:text-base placeholder-gray-500 pl-10 pr-4 rounded-lg border border-gray-400 w-full py-2 focus:outline-none focus:border-blue-400" placeholder="Mot de passe" [(ngModel)]="password" />
+          </div>
+        </div>
+
+        
+
+        <div class="flex w-full mb-5">
+          <button type="submit" class="flex items-center justify-center focus:outline-none text-white text-sm sm:text-base bg-blue-600 hover:bg-blue-700 rounded py-2 w-48 transition duration-150 ease-in" (click)="login()" [disabled]="btnDisabled">
+            <span class="mr-2 uppercase" >Se connecter</span>
+           
+          </button>
+        </div>
+        <div class="flex ">
+         
+            <label class="  ">
+              <input type="checkbox" class="form-checkbox   text-blue-600" checked><span class="ml-2 text-gray-700">Se souvenir de moi</span>
+          </label>
+            <a href="#" class=" px-8 text-blue-500 hover:text-blue-700" style="margin-left:25px;">Mot de passe oublié ?</a>
+          
+        </div>
+      </form>
+    </div>
+
+  </div>
+  <img class="  " style="margin-left:300px; width:355px; height:350px;" alt="" src="./../../assets/login-img.png">
+</div>
+<br><br><br>
+<label class="text-gray-700"style="margin-left:600px;">
+  Copyright @2021 tous les droits reservés
+</label>
+</body>

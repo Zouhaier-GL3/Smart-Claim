@@ -1,0 +1,1592 @@
+<div class="flex">
+
+    <div style="width: 70rem;   position: absolute; margin-top: -4rem;">
+      <mat-horizontal-stepper [linear]="isLinear" #stepper>
+  
+        <mat-step  [stepControl]="firstFormGroup">
+          <form >
+  
+          <div class="flex py-4 px-8 ">
+            <img src="./../../assets/clipboard.svg" class="w-8 h-8" style=" margin-left: 10px;  margin-top: -5px;">
+            <h1 class="text-blue-500 font-bold px-6 ">Dossier N° 695231</h1>
+          </div>
+          <div class="overflow-auto" style="height: 37rem;">
+            <div >
+            <div class="flex center mb-0 ">
+              <img src="./../../assets/clipboard.png" class="w-8 h-8" style="margin-top: 2px; margin-left: -45px;">
+              <h1 class="text-gray-900 font-medium px-2 py-2">Suivi de Réparation</h1>
+            </div>
+            <div class="   center py-4 flex ">
+  
+              <button
+                class=" w-80 font-bold flex-shrink-0 text-white border-2 border-blue-500 bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+                style=" margin-left: -21rem;" onclick="document.getElementById('id01').style.display='block'">PLANIFIER LE
+                VISIO SUIVI</button>
+              <button
+                class=" w-80 font-bold flex-shrink-0 text-white border-2 border-blue-500 bg-blue-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+                style=" margin-left: 1rem;" onclick="document.getElementById('id02').style.display='block'">COMMENCER LE VISIO SUIVI</button>
+  
+            </div>
+            </div>
+  
+            <div class="px-8   ">
+              <!-- img Container -->
+            <div class="flex space-x-4   border-1 border-gray-700 rounded-lg w-full mb-4 " style="height: 130px;">
+   
+   
+            <div class="flex" >
+            <img src="./../../assets/image.svg" class="w-8 h-8" style="margin-top: 2px; margin-left: 10px;">
+            <h1 class="text-gray-900 font-medium px-2 py-2">Dépot des Images</h1>
+            </div>
+   
+                    <div class="relative border-dotted h-32   flex justify-center items-center hover:bg-blue-100 rounded-full" style="margin-left: 8rem;">
+                        <div class="absolute">
+                            <div class="flex flex-col items-center"> <img src="./../../assets/icons/Icon-cloud-upload.png" class="w-16 h-12"> <span class="block text-gray-900 font-normal">Glisser les photos ici</span><div class="flex"><span class="block text-gray-900 font-normal">Ou </span><P class="block text-blue-600 font-normal">Parcourir</P></div> </div>
+                        </div> <input type="file"  class="h-full w-full opacity-0" name="file">
+                    </div>
+                   
+            </div>
+              <div class="flex mb-2">
+                <img src="./../../assets/Icon material-attach-file.svg" style="margin-top: -4rem;" class="w-6 h-6"
+                  style="margin-top: 2px; margin-left: 10px;">
+                <h1 class="text-gray-900 font-medium px-2 ">Rapport de l'expertise</h1>
+              </div>
+              <div class="flex space-x-4  px-0   rounded-lg  " style="width:61rem; height: 160px;">
+                <!-- Left Container -->
+                <div class=" px-0   rounded-lg w-1/2  " style="height: 100px;">
+  
+                  <div class=" px-2 py-2 border-1 border-gray-400 rounded-lg mb-3 h-full">
+  
+                    <div
+                      class="relative border-dotted h-16  my-1 flex justify-center items-center hover:bg-blue-100 rounded-full">
+                      <div class="absolute ">
+                        <div class=" items-center"> <img src="./../../assets/Icon awesome-file-import.svg" style="margin-left:6rem" class="w-8 h-8 "> 
+                        <div class="flex">
+                        <span class="block text-gray-900 font-normal">Glisser le Rapport ici Ou</span>
+                           
+                        <P class="block text-blue-600 font-normal px-2 font-medium">Parcourir</P>
+                        </div>
+                        </div>
+                      </div> <input type="file" class="h-full w-full opacity-0" name="file">
+                    </div>
+                  </div>
+  
+                </div>
+                <!-- Right Container -->
+  
+                <div class=" px-0   rounded-lg w-1/2  " style="height: 100px;">
+                  <a (click)="toggle()" id="bt" >
+                    <div class=" px-2 py-2 border-1 border-gray-400 rounded-lg mb-3 h-full">
+  
+                      <div
+                        class="relative border-dotted h-16  my-1 flex justify-center items-center hover:bg-blue-100 rounded-full">
+                        <div class="absolute">
+                          <div class="flex flex-col items-center"> <img src="./../../assets/Icon metro-files-empty.svg"
+                              class="w-8 h-8"> <span class="block text-gray-900 font-normal">Formulaire Smart Claim</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
+            </div>
+  
+            <ng-container *ngIf="show" >
+              <form [formGroup]="firstFormGroup">
+                <div class="px-16 py-2">
+                  <div class=" border-garay-700 border-2  px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 " style="width: 55rem; ">
+         
+                    <div >
+      
+                      <div class="container px-6 py-4 mx-auto flex" >
+                        <img class="align-self-center  mr-3  " style=" width:50px; height:50px;  margin-left:50px;" alt=""
+                          src="./../../assets/QR-code.png">
+                        <a (click)="printPage()"><img src="./../../assets/pdf.png" alt="Pdf"
+                            style=" width:50px; height:45px; margin-left:270px;"></a>
+                        <img class="align-self-center  mr-3 " style=" width:70px; height:50px; margin-left:300px;" alt=""
+                          src="./../../assets/login-smart.png">
+                      </div>
+                      <div class="container items-center justify-center flex">
+                        <img src="./../../assets/Icon metro-files-empty.svg " class="w-8 h-8 ">
+                        <h2 class="text-xs title-font font-bold text-black text-xl my-1 sm:text-2xl px-2">Rapport
+                          d'expertise:Formulaire Smart Claim </h2>
+      
+                      </div>
+      
+      
+                      <div class="text-gray-600 body-font">
+                        <div>
+                          <div class="container px-2 mx-auto">
+                            <div class="mb-8 w-full ">
+                              <div
+                                class=" border-garay-700 border-2 h-56 px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 ">
+      
+                                <div class="flex space-x-4 mb-3">
+                                  <div class=" w-1/2  rounded-lg px-1 ">
+                                    <div class="flex  space-x-4">
+                                      <h1 class="title-font   font-medium text-gray-900 ">Nom et Prénom</h1>
+                                      <mat-form-field>
+                                        <input matInput formControlName="nom" required
+                                          class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                          style="width: 101Srem;  background-color: #e2e8f0;">
+                                      </mat-form-field>
+                                    </div>
+      
+                                    <div class="flex  space-x-4" style="margin-left: 5rem;">
+                                      <h1 class="title-font   font-medium text-gray-900 ">Expert</h1>
+                                      <mat-form-field>
+                                        <input matInput formControlName="expert" required
+                                          class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                          style="width: 11rem;  background-color: #e2e8f0;">
+                                      </mat-form-field>
+                                    </div>
+      
+                                  </div>
+                                  <div class=" w-1/2  rounded-lg">
+      
+                                    <div class="flex  space-x-4">
+                                      <h1 class="title-font   font-medium text-gray-900 ">Référence de l'expert</h1>
+                                      <mat-form-field>
+                                        <input matInput required formControlName="refExpert"
+                                          class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                          style="width: 11rem;  background-color: #e2e8f0;">
+                                      </mat-form-field>
+                                    </div>
+      
+                                    <div class="flex  space-x-4" style="margin-left: 4.2rem;">
+                                      <h1 class="title-font   font-medium text-gray-900 ">Date mission</h1>
+                                      <mat-form-field>
+                                        <input matInput required formControlName="dateMission"
+                                          class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                          style="width: 11rem;  background-color: #e2e8f0;">
+                                      </mat-form-field>
+                                    </div>
+      
+      
+      
+      
+      
+                                  </div>
+                                </div>
+                                <div class="flex  space-x-4" style="margin-left: 4rem;">
+                                  <h1 class="title-font   font-medium text-gray-900 mb-3">Adresse</h1>
+                                  <mat-form-field>
+                                    <textarea matInput rows="2" required formControlName="aderesse"
+                                      class="  pl-4  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                      style="width: 40rem;  background-color: #e2e8f0;">
+                                   </textarea>
+                                  </mat-form-field>
+      
+                                </div>
+                                <div class="flex space-x-4 mb-3">
+                                  
+                                    <div class="flex  space-x-4" style="margin-left: 6.2rem;">
+                                      <h1 class="title-font   font-medium text-gray-900 mb-3">Text</h1>
+                                      <mat-form-field>
+                                        <input matInput required formControlName="text"
+                                          class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                                          style="width: 11rem;  background-color: #e2e8f0;">
+                                      </mat-form-field>
+                                    </div>
+      
+      
+      
+                                
+                                  <div class=" w-1/2  rounded-lg">
+      
+      
+      
+                                    <div class="flex  space-x-4" style="margin-left: 14rem;">
+                                      <h1 class="title-font   font-medium text-gray-900 mb-3">Fax</h1>
+                                      <mat-form-field>
+                                        <input matInput required formControlName="fax"
+                                          class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                                          style="width: 11rem;  background-color: #e2e8f0;">
+                                      </mat-form-field>
+                                    </div>
+      
+      
+      
+      
+      
+                                  </div>
+                                </div>
+      
+                              </div>
+      
+                            </div>
+      
+                          </div>
+                        </div>
+                      </div>
+                      <div class="flex space-x-2  px-1">
+                        <div class=" w-1/2  rounded-lg">
+                          <div class="flex  space-x-4" style="margin-left: 4.5rem;">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Mandant</h1>
+                            <mat-form-field>
+                              <input matInput required formControlName="mandat"
+                                class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                style="width: 11rem;  background-color: #e2e8f0;">
+                            </mat-form-field>
+                          </div>
+      
+      
+                        </div>
+                        <div class=" w-1/2  rounded-lg">
+      
+      
+      
+                          <div class="flex  space-x-4" style="margin-left: 3.5rem;">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Date d'accident</h1>
+                            <mat-form-field>
+                              <input matInput required formControlName="dateacc"
+                                class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                style="width: 11rem;  background-color: #e2e8f0;">
+                            </mat-form-field>
+                          </div>
+      
+      
+      
+      
+      
+                        </div>
+                      </div>
+      
+                      <div>
+                        <div class="container px-2  mx-auto">
+                          <div class="mb-3 w-full ">
+                            <div
+                              class=" border-garay-700 border-2 h-56 px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 ">
+      
+                              <div class="flex space-x-4 mb-3">
+                                <div class=" w-1/2  rounded-lg px-1 ">
+                                  <div class="flex  space-x-4" style="margin-left: 4.5rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Assuré</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="assure"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: -5px;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Immatriculation</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="immat"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 mb-4 "
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-4" style="margin-left: 4.1rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Contrat</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="contrat"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">N° Dossier</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="nDos"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                                <div class=" w-1/2  rounded-lg">
+      
+                                  <div class="flex  space-x-4" style="margin-left: 9.5rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Tiers</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="tiers"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 7.2rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Veh Tiers</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="vehTiers"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 mb-4 "
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-2" style="margin-left: 1.9rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Dos</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="dos"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                    <h1 class="title-font   font-medium text-gray-900 ">Cont</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="cont"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 5.9rem;">
+                                    <h1 class="title-font   font-medium text-gray-900 ">Cie adverse</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="adverse"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 11rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+      
+      
+      
+      
+                                </div>
+                              </div>
+                            </div>
+      
+                          </div>
+      
+                        </div>
+                      </div>
+                      <div class="flex space-x-2  px-1">
+                        <div class=" w-1/2  rounded-lg">
+                          <div class="flex  space-x-2" style="margin-left: 3rem;">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Date examen</h1>
+                            <mat-form-field>
+                              <input matInput required formControlName="exam"
+                                class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                                style="width: 11rem;  background-color: #e2e8f0;">
+                            </mat-form-field>
+                          </div>
+                          <div class="flex  space-x-4" style="margin-left: 7rem;">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Lieu</h1>
+                            <mat-form-field>
+                              <input matInput required formControlName="lieu"
+                                class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                                style="width: 11rem;  background-color: #e2e8f0;">
+                            </mat-form-field>
+                          </div>
+                          <div class="flex  space-x-4" style="margin-left: 2.8rem;">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Observation</h1>
+                            <mat-form-field>
+                              <input matInput required formControlName="observ"
+                                class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                                style="width: 11rem;  background-color: #e2e8f0;">
+                            </mat-form-field>
+                          </div>
+      
+      
+                        </div>
+                        <div class=" w-1/2  rounded-lg">
+      
+      
+      
+                          <div class="flex  space-x-4" style="margin-left: 3.3rem;">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Veh expertise</h1>
+                            <mat-form-field>
+                              <input matInput required formControlName="expertise"
+                                class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                style="width: 11rem;  background-color: #e2e8f0;">
+                            </mat-form-field>
+                          </div>
+      
+      
+      
+      
+      
+                        </div>
+                      </div>
+      
+                      <div>
+                        <div class="container px-2  mx-auto">
+                          <div class="mb-3 w-full ">
+                            <div
+                              class=" border-garay-700 border-2  px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 " style="height: 13rem;">
+      
+                              <div class="flex space-x-4 mb-3">
+                                <div class=" w-1/3  rounded-lg px-1 ">
+      
+      
+                                  <div class="flex  space-x-4" style="margin-left: 4rem;">
+                                    <P class="title-font   font-medium text-gray-900 ">Marque</P>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="marque"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 5.5rem;">
+                                    <h1 class="title-font   text-gray-900 ">Type</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="type"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 mb-4 "
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 5rem;">
+                                    <h1 class="title-font    text-gray-900 ">Puiss</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="Puiss"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 5rem;width: 24rem;">
+                                    <h1 class="title-font    text-gray-900 " style="margin-left: -4rem;">Index-K</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="index"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;" >
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+      
+                                <div class=" w-1/3  rounded-lg">
+      
+                                  <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                    <h1 class="title-font    text-gray-900 ">Genre</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="genre"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 1.5rem;">
+                                    <h1 class="title-font   text-gray-900 ">Couleur</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="couleur"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 2.2rem; width: 24rem;">
+                                    <h1 class="title-font   text-gray-900 "style="margin-left: -1rem;">Etat-veh</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="etat"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 mb-4 "
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                            
+      
+                                  <div class="flex  space-x-4" style="margin-left: -2rem;">
+                                    <h1 class="title-font   text-gray-900 ">Immob</h1>
+                                    <mat-form-field>
+                                      <input matInput required formControlName="immob"
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+      
+      
+      
+      
+                                </div>
+                                <div class=" w-1/3  rounded-lg">
+      
+                                  <div class="flex  space-x-4" style="margin-left: 1.8rem;width: 24rem;">
+                                    <h1 class="title-font   text-gray-900 "style="margin-left: -2rem;">N° Chassis</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+                                  <div class="flex  space-x-4" style="margin-left: 4.5rem;width: 24rem;">
+                                    <h1 class="title-font  text-gray-900 "style="margin-left: -4rem;">Date M.C</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 mb-4 "
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                               
+      
+                                  <div class="flex  space-x-4" style="margin-left: -1.7rem;">
+                                    <h1 class="title-font  text-gray-900 ">Circonstance</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 7rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-2" style="margin-left: -4rem;">
+                                    <h1 class="title-font  text-gray-900 ">Dos</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 4rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                    <h1 class="title-font   text-gray-900 " style="margin-left: -3.4rem;">Cont</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                        style="width: 4rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+      
+      
+      
+      
+                                </div>
+                              </div>
+                            </div>
+      
+                          </div>
+      
+                        </div>
+                      </div>
+                    
+                     
+                       
+                       
+      
+                    </div>
+                     <!-- Table  -->
+                     <div>
+                      <div class="container px-2  mx-auto">
+                        <div class="mb-3 w-full ">
+                          <div
+                            class=" border-garay-700 border-2    rounded-lg overflow-hidden text-center relative mb-3 " style="height: 50rem;">
+      
+                            <div class="flex  mb-3 h-full">
+                              
+      
+                              <div class=" w-full    border-gray-300 border-2 h-full">
+                              <div class="flex">
+                                <div class=" w-40 h-16   border-gray-300 border-2 ">
+                                  <h1 class="text-xs mb-1">Accord avec</h1>
+                                  <div class="px-4"> 
+                                   <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                </div>
+                                <div class="w-full h-16 border-gray-300 border-2"> 
+                                <h1>Estimation des travaux</h1>
+                                <p>(Sous réserve des garanties des responsabilités)</p>
+                                </div>
+                            
+                              </div>
+                              <div class="flex">
+                                <div class=" w-40  px-1 border-gray-300 border-2 " style="height: 38rem;">
+                                  <h1 class="text-xs mb-1 py-2">Accord avec</h1>
+                                  <div class="bg-gray-300 h-24 w-full border-gray-400 border-2"></div>
+                                  <h1 class="text-xs mb-1 py-2">Accord avec</h1>
+                                  <mat-form-field>
+                                    <textarea matInput rows="2" required
+                                      class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                      style="width: 8.5rem;  background-color: #e2e8f0; margin-left: 0.5rem;">
+                                   </textarea>
+                                  </mat-form-field>
+                                </div>
+                                
+                                <!-- Right tab -->
+                                <div class=" w-1/2   border-gray-300 border-2 h-full">
+                                  <div class=" w-full    border-gray-300 border-2 flex" style="height: 19rem;">
+                                    
+                                    <div class="w-1/3">
+                                      <h1 class=" text-gray-900 mb-3 bg-blue-100 text-xs">Désignation des
+                                        fournitures</h1>
+                                      <mat-form-field>
+                                        <textarea matInput rows="2" required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                          style="width: 7rem;  background-color: #e2e8f0; margin-left: 0.5rem;">
+                                       </textarea>
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <textarea matInput rows="2" required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                          style="width: 7rem;  background-color: #e2e8f0; margin-left: 0.5rem;">
+                                       </textarea>
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <textarea matInput rows="2" required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                          style="width: 7rem;  background-color: #e2e8f0; margin-left: 0.5rem;">
+                                       </textarea>
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <textarea matInput rows="2" required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                          style="width: 7rem;  background-color: #e2e8f0; margin-left: 0.5rem;">
+                                       </textarea>
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="w-1/3">
+                                      <h1 class=" text-gray-900 mb-8 bg-blue-100 text-xs">Montant</h1>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="   pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style=" width: 7rem; background-color: #e2e8f0;">
+                                       
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                    </div>
+                                    <div class="w-1/3">
+                                      <h1 class=" text-gray-900 mb-8 bg-blue-100 text-xs">V%</h1>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                      <mat-form-field>
+                                        <input matInput  required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-5"
+                                          style="width: 7rem;  background-color: #e2e8f0;">
+                                      
+                                      </mat-form-field>
+                                    </div>
+                                  </div>      
+      
+                                 <div  class=" w-full   border-gray-300 border-2 " style="height: 18.8rem;" >
+                                    <h1>Nature des chocs et dégats</h1>
+                                       <div >
+                                       <mat-form-field>
+                                          <textarea matInput rows="11" required
+                                          class="  pl-1  rounded-lg shadow-sm  focus:shadow-outline text-gray-600  mb-3"
+                                          style=" width: 25rem; background-color: #e2e8f0; margin-left: -7rem;">
+                                         </textarea>
+                                      </mat-form-field>
+                                     </div>
+                                 </div>                    
+                                </div>
+                                <!-- Left tab -->
+                                <div class=" w-46  border-gray-300 border-2 h-full">
+                                  <h1 class="py-2">Main d'oeuvre</h1>
+                                  <div class="flex  space-x-4" style="margin-left: 3.5rem;">
+                                    <h1 class="text-xs  mb-3">Tolerie</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 7.5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-4" style="margin-left: 2rem;">
+                                    <h1 class="text-xs mb-3">Mécanique</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 7.5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-4" style="margin-left: 2.4rem;">
+                                    <h1 class="text-xs mb-3">Electricité</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 7.5em;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-4" style="margin-left: 2.2rem;">
+                                    <h1 class="text-xs mb-3">Tapisserie</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 7.5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                    <h1 class="text-xs mb-3">Boisserie</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 7.5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                  <div class="flex  space-x-4" style="margin-left: 2.9rem;">
+                                    <h1 class="text-xs mb-3">Peinture</h1>
+                                    <mat-form-field>
+                                      <input matInput required
+                                        class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                        style="width: 7.5rem;  background-color: #e2e8f0;">
+                                    </mat-form-field>
+                                  </div>
+                                <hr>
+                                <div class="flex  space-x-4" style="margin-left: 2rem;">
+                                  <h1 class="text-xs mb-3">Total M.O</h1>
+                                  <mat-form-field>
+                                    <input matInput required
+                                      class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                      style="width: 8rem;  background-color: #e2e8f0;">
+                                  </mat-form-field>
+                                </div>
+                                <div class="flex  space-x-4" style="margin-left: 1.9rem;">
+                                  <h1 class="text-xs mb-3">Total Four</h1>
+                                  <mat-form-field>
+                                    <input matInput required
+                                      class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                      style="width: 8rem;  background-color: #e2e8f0;">
+                                  </mat-form-field>
+                                </div>
+                                <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                  <h1 class="text-xs mb-3">Total GL</h1>
+                                  <mat-form-field>
+                                    <input matInput required
+                                      class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                      style="width: 8rem;  background-color: #e2e8f0;">
+                                  </mat-form-field>
+                                </div>
+                                <div class="flex  space-x-4" style="margin-left: 1.6rem;">
+                                  <h1 class="text-xs mb-3">Déd. Vétus</h1>
+                                  <mat-form-field>
+                                    <input matInput required
+                                      class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                      style="width: 8rem;  background-color: #e2e8f0;">
+                                  </mat-form-field>
+                                </div>
+                              <hr>
+                              <div class="flex  space-x-4" style="margin-left: 2rem;">
+                                <h1 class="text-xs mb-3">Boisserie</h1>
+                                <mat-form-field>
+                                  <input matInput required
+                                    class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                    style="width: 8rem;  background-color: #e2e8f0;">
+                                </mat-form-field>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 2.1rem;">
+                                <h1 class="text-xs mb-3">Total Net</h1>
+                                <mat-form-field>
+                                  <input matInput required
+                                    class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                    style="width: 8rem;  background-color: #e2e8f0;">
+                                </mat-form-field>
+                              </div>
+                              <h1 class="title-font   font-medium text-gray-900 ">Expert</h1>
+                              <p>Nom et Prénom</p>
+                              <div>
+                                <mat-form-field>
+                                  <input matInput required
+                                    class=" pl-4  leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                    style="width: 11rem;  background-color: #e2e8f0;">
+                                </mat-form-field>
+                              </div>
+                              
+                                </div>
+                                
+                               
+                              </div>
+                              <div class="py-2">
+                                <h1>Avis sur les relations entre les corconstances déclarées et les dégats constatés</h1>
+                                <h1>Expertise effectuée avant, pendant , après réparations (1,2 ou les 3)</h1>
+                              </div>
+                              <div class="flex ">
+                                <button
+                                  class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+                                  style="margin-left:160px" matStepperPrevious>ANNULER</button>
+                                <button
+                                  class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+                                  style="margin-left:220px" matStepperNext>ENREGISTRER</button>
+                              </div>
+                              </div>
+                             
+                            </div>
+                            
+                          </div>
+      
+                        </div>
+      
+                      </div>
+                    </div>
+                
+                  </div>
+                </div>
+              </form>
+            </ng-container>
+            <div class=" px-2 " style=" margin-top: -1rem ; " >
+              <button
+                class="w-64 font-bold  flex-shrink-0 text-white border-gray-300 border-2 bg-gray-500 rounded py-0  focus:outline-none hover:text-white hover:bg-blue-400 rounded text-lg mt-10 sm:mt-0"
+                style="margin-left:370px ;" matStepperNext>VALIDER</button>
+            </div>
+          </div>
+  
+          <!-- Popup Modal 1 -->
+          <form>
+            <div id="id01" class="w3-modal">
+              <div class="w3-modal-content rounded-lg px-16 2">
+                <header class="mb-8 font-bold text-black" style="margin-left:190px">
+                  <span onclick="document.getElementById('id01').style.display='none'"
+                    class="w3-button w3-display-topright">&times;</span>
+                </header>
+               
+                <div id="profile" class="px-32">
+                  <div class="user-top py-4 px-8">
+  
+                    <div class=" px-2 align border-2 border-blue-500 rounded-full w-full mb-2">
+                      <tr *ngFor="let profile of user" class="align flex space-x-4">
+                        <div style="margin-top: 5px;">
+                          <p-avatar image="assets/user.png" shape="circle" id="client-img" size="xlarge"></p-avatar>
+                        </div>
+  
+                        <h5 style="margin-left: 130px;">{{profile.name}}</h5>
+                        <a style="margin-left: 140px;">
+                          <td id="userIcon"><img src="../../assets/Icon Button.svg" class="w-16 h-16"></td>
+                        </a>
+  
+                      </tr>
+                    </div>
+                    <div class="px-56">
+                      <div class="flex ">
+                        <img src="./../../assets/green-circle.svg" class="w-3 h-3 "
+                          style="margin-top: 15px; margin-left: 1px;">
+                        <p class="text-gray-900 font-medium px-2 " style="margin-top: 10px;">En Ligne</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div style="margin-left: 13rem;">
+                  <h1>Veuillez choisir un rendez-vous pour le suivi sur terrain</h1>
+                </div>
+                <div> 
+                  <!-- <div class="container mt-5">
+                    <form class="row">
+                      <div class="form-group col-6">
+                      <label for="datepicker"><i class="fa fa-calendar"></i> Date</label>
+                      <input type="text" class="form-control" id="datepicker" readonly>
+                      </div>
+                    </form>
+                  </div>    -->
+                  
+                  <div style="margin-left: 20rem;">
+                  <mat-form-field>
+                    <div><label>Date de rendez-vous</label></div>
+                      <div class="relative">
+                        <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-white" style="margin-top: -0.5rem;">
+                          <img src="https://img.icons8.com/material-sharp/24/000000/calendar--v2.png"/>
+                        </div>
+                      <input type="text"  mdbInput matInput value="jj/mm/aa"
+                      required  class=" pl-5 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                      style="background-color: #e2e8f0;" id="datepicker" readonly>
+                    </div>
+                  </mat-form-field>
+                  <br />
+                  <mat-form-field>
+                    <div><label>Heure de rendez-vous</label></div>
+                      <div class="relative">
+                        <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-white" style="margin-top: -0.5rem;">
+                          <img src="https://img.icons8.com/material/24/000000/clock--v1.png"/>
+                        </div>
+                      <input type="text"  mdbInput matInput  data-clocklet="format: h:mm a" value="00:00 pm"
+                      required  class=" pl-5 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+                      style="background-color: #e2e8f0; z-index: 13;" id="datepicker" readonly>
+                    </div>
+                  </mat-form-field>
+                  <div>
+                    <button
+                      class=" w-80 mb-4 font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+                      style="margin-left: -5rem" routerLink="/expert" routerLinkActive="active">Continuer</button>
+                  </div>
+                </div>
+                
+                </div>
+                
+  
+              </div>
+            </div>
+          </form>
+          <!-- Popup Modal 2 -->
+          <form>
+            <div id="id02" class="w3-modal" >
+              <div class="w3-modal-content rounded-lg px-4 py-2" style="margin-top: -5rem; height: 41rem;">
+                <header class="mb-8 font-bold text-black" style="margin-left:190px"> 
+                  <span onclick="document.getElementById('id02').style.display='none'" 
+                  class="w3-button w3-display-topright">&times;</span>
+                </header>
+                <div class="px-56" style="margin-top: -2rem; margin-left: 9rem;">
+                    <div class="flex ">
+                      <img src="./../../assets/green-circle.svg" class="w-3 h-3 "
+                        style="margin-top: 15px; margin-left: 1px;">
+                      <p class="text-gray-900 font-medium px-2 " style="margin-top: 10px;">En Ligne</p>
+                    </div>
+                  </div>
+                <div class="mb-2 py-2" >
+                    <iframe src="https://www.youtube.com/embed/lg5hj2c5Nkk?autoplay=1" style="height: 31rem; width: 53rem; " class="mb-2 rounded-lg"></iframe>
+                </div>
+                <div class="px-32">
+                <div class=" px-2 align border-2 border-blue-500 rounded-full w-46">
+                    <tr *ngFor="let profile of user" class="align flex space-x-4">
+                      <div style="margin-top: 5px;">
+                        <p-avatar image="assets/user.png" shape="circle" id="client-img" size="large"></p-avatar>
+                      </div>
+        
+                      <h5 style="margin-left: 177px;">{{profile.name}}</h5>
+                      <a style="margin-left: 140px;">
+                        <td id="userIcon"><img src="../../assets/Icon Button.svg" class="w-12 h-12"></td>
+                      </a>
+        
+                    </tr>
+                  </div>
+                  
+                </div>
+                
+               
+              </div>
+            </div>
+          </form>
+        </form>
+        </mat-step>
+        <!-- --------------------------------------------------------step 2 ---------------------------------------------------------- -->
+        <mat-step  [stepControl]="secondFormGroup">
+          <form>
+          
+          <div class="flex py-4 px-8 ">
+            <img src="./../../assets/clipboard.svg" class="w-8 h-8" style=" margin-left: 10px;  margin-top: -5px;">
+            <h1 class="text-blue-500 font-bold px-6 ">Dossier N° 695231</h1>
+          </div>
+          <div class="overflow-auto" style="height: 37rem;">
+            <div class="flex center mb-0">
+              <img src="./../../assets/clipboard.png" class="w-8 h-8" style="margin-top: 2px; margin-left: -45px;">
+              <h1 class="text-gray-900 font-medium px-2 py-2">Suivi de Réparation</h1>
+            </div>
+            <div class="   center py-4 flex ">
+  
+             
+              <button
+                class=" w-80 font-bold flex-shrink-0 text-white border-2 border-blue-500 bg-gray-500 border-0 py-2 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+                style=" margin-left: -6rem;">COMMENCER LE VISIO SUIVI</button>
+  
+            </div>
+  
+            <!-- img Container -->
+             
+    <div class="flex border-1 border-gray-700 rounded-lg mb-3 " style="margin-left: 1rem; height: 215px; width: 63rem;">
+        <div  style="height: 215px; width: 53rem;">
+       
+       
+            <div class="flex" >
+                <img src="./../../assets/icons/Icon-image.png" class="w-8 h-8" style="margin-top: 2px; margin-left: 10px;">
+                <h1 class="text-gray-900 font-medium px-2 py-2">La liste des Images</h1>
+            </div>
+           
+            <div class="overflow-x-auto flex space-x-2 my-2 px-2 width:15rem">
+                               
+                <img src="./../../assets/icons/Groupe de masques 10.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 14.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 16.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 15.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 10.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 14.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 16.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                <img src="./../../assets/icons/Groupe de masques 15.png" class="w-56 h-40 mb-1 rounded-lg border-gray-300 border-2" >
+                 
+            </div>                  
+        </div>
+        <div  style="height: 215px; width: 10rem;" class="px-2 ">
+       
+           <div class="relative border-dotted h-40   flex justify-center items-center hover:bg-blue-100 rounded-lg " style="margin-top: 2.8rem;" >
+                <div class="absolute">
+                    <div class="flex flex-col items-center"> <img src="./../../assets/icons/add-img.png" class="w-16 h-16"> </div>
+                </div> <input type="file"  class="h-full w-full opacity-0" name="file">
+            </div>
+                           
+        </div>
+       </div>
+       <!--End img Container -->
+            <div class="flex ">
+              <img src="./../../assets/Icon material-attach-file.svg" class="w-8 h-8"
+                style="margin-top: 2px; margin-left: 10px;">
+              <h1 class="text-gray-900 font-medium px-2 py-2">Rapport de l'expertise</h1>
+              <button (click)="toggle()" id="bt"  class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left: 35rem;"> {{buttonName}} </button>
+            </div>
+            <!-- Rapport  -->
+            
+           
+          
+            <ng-container *ngIf="show">
+            <div class="px-8 py-2">
+              <div class=" mb-4  border-1 border-gray-400 rounded-lg px-4 " style="width:980px; height: 116rem; ">
+                <div>
+  
+                  <div class="container px-6 py-4 mx-auto flex">
+                    <img class="align-self-center  mr-3  " style=" width:50px; height:50px;  margin-left:50px;" alt=""
+                      src="./../../assets/QR-code.png">
+                    <a (click)="printPage()"><img src="./../../assets/pdf.png" alt="Pdf"
+                        style=" width:50px; height:45px; margin-left:270px;"></a>
+                    <img class="align-self-center  mr-3 " style=" width:70px; height:50px; margin-left:300px;" alt=""
+                      src="./../../assets/login-smart.png">
+                  </div>
+                  <div class="container items-center justify-center flex">
+                    <img src="./../../assets/Icon metro-files-empty.svg " class="w-8 h-8 ">
+                    <h2 class="text-xs title-font font-bold text-black text-xl my-1 sm:text-2xl px-2">Rapport
+                      d'expertise:Formulaire Smart Claim </h2>
+  
+                  </div>
+  
+  
+                  <div class="text-gray-600 body-font">
+                    <div>
+                      <div class="container px-2 mx-auto">
+                        <div class="mb-8 w-full ">
+                          <div
+                            class=" border-garay-700 border-2 h-56 px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 ">
+  
+                            <div class="flex space-x-4 mb-3">
+                              <div class=" w-1/2  rounded-lg px-1 ">
+                                <div class="flex  space-x-4">
+                                  <h1 class="title-font   font-medium text-gray-900 ">Nom et Prénom</h1>
+                                    <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                      style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.nom }}</p>
+                                </div>
+  
+                                <div class="flex  space-x-4" style="margin-left: 5rem;">
+                                  <h1 class="title-font   font-medium text-gray-900 ">Expert</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                  style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.expert }}</p>
+                                </div>
+  
+                              </div>
+                              <div class=" w-1/2  rounded-lg">
+  
+                                <div class="flex  space-x-4">
+                                  <h1 class="title-font   font-medium text-gray-900 ">Référence de l'expert</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.refExpert}}</p>
+                                </div>
+  
+                                <div class="flex  space-x-4" style="margin-left: 4.2rem;">
+                                  <h1 class="title-font   font-medium text-gray-900 ">Date mission</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                  style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.dateMission}}</p>
+                                </div>
+  
+  
+  
+  
+  
+                              </div>
+                            </div>
+                            <div class="flex  space-x-4">
+                              <h1 class="title-font   font-medium text-gray-900 mb-3">aderesse</h1>
+                             
+                              <p  class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                              style="width: 48rem; height: 2rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.aderesse }}</p>
+  
+                            </div>
+                            <div class="flex space-x-4 mb-3">
+                              
+                                <div class="flex  space-x-4" style="margin-left: 6.2rem;">
+                                  <h1 class="title-font   font-medium text-gray-900 mb-3">Text</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.text }}</p>
+                                </div>
+  
+  
+  
+                            
+                              <div class=" w-1/2  rounded-lg">
+  
+  
+  
+                                <div class="flex  space-x-4" style="margin-left: 15rem;">
+                                  <h1 class="title-font   font-medium text-gray-900 mb-3">Fax</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.fax }}</p>
+                                </div>
+  
+  
+  
+  
+  
+                              </div>
+                            </div>
+  
+                          </div>
+  
+                        </div>
+  
+                      </div>
+                    </div>
+                  </div>
+                  <div class="flex space-x-2  px-1">
+                    <div class=" w-1/2  rounded-lg">
+                      <div class="flex  space-x-4" style="margin-left: 4.5rem;">
+                        <h1 class="title-font   font-medium text-gray-900 mb-3">Mandant</h1>
+                        <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                        style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.mandat }}</p>
+                      </div>
+  
+  
+                    </div>
+                    <div class=" w-1/2  rounded-lg">
+  
+  
+  
+                      <div class="flex  space-x-4" style="margin-left: 3rem;">
+                        <h1 class="title-font   font-medium text-gray-900 mb-3">Date d'accident</h1>
+                        
+                          <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                          style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.dateacc }}</p>
+                      </div>
+  
+  
+  
+  
+  
+                    </div>
+                  </div>
+  
+                  <div>
+                    <div class="container px-2  mx-auto">
+                      <div class="mb-3 w-full ">
+                        <div
+                          class=" border-garay-700 border-2 h-56 px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 ">
+  
+                          <div class="flex space-x-4 mb-3">
+                            <div class=" w-1/2  rounded-lg px-1 ">
+                              <div class="flex  space-x-4" style="margin-left: 4.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Assuré</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.assure }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: -5px;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Immatriculation</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.immat }}</p>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 4.1rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Contrat</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value. contrat }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">N° Dossier</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.nDos }}</p>
+                              </div>
+                            </div>
+                            <div class=" w-1/2  rounded-lg">
+  
+                              <div class="flex  space-x-4" style="margin-left: 8.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Tiers</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.tiers }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 6.2rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Veh.dos</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.vehTiers }}</p>
+                              </div>
+                              <div class="flex  space-x-2" style="margin-left: 4.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Dos</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.dos }}</p>
+                                <h1 class="title-font   font-medium text-gray-900 ">Cont</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.cont }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 4.9rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Cie adverse</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.adverse}}</p>
+                              </div>
+  
+  
+  
+  
+  
+                            </div>
+                          </div>
+                        </div>
+  
+                      </div>
+  
+                    </div>
+                  </div>
+                  <div class="flex space-x-2  px-1">
+                    <div class=" w-1/2  rounded-lg">
+                      <div class="flex  space-x-2" style="margin-left: 3rem;">
+                        <h1 class="title-font   font-medium text-gray-900 mb-3">Date examen</h1>
+                        <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                        style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.exam }}</p>
+                      </div>
+                      <div class="flex  space-x-4" style="margin-left: 7rem;">
+                        <h1 class="title-font   font-medium text-gray-900 mb-3">Lieu</h1>
+                        <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                        style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.lieu }}</p>
+                      </div>
+                      <div class="flex  space-x-4" style="margin-left: 2.8rem;">
+                        <h1 class="title-font   font-medium text-gray-900 mb-3">Observation</h1>
+                        <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                        style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.observ}}</p>
+                      </div>
+  
+  
+                    </div>
+                    <div class=" w-1/2  rounded-lg">
+  
+  
+  
+                      <div class="flex  space-x-4" style="margin-left: 3rem;">
+                        <h1 class="title-font   font-medium text-gray-900 mb-3">Veh expertise</h1>
+                        <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                        style="width: 12.5rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.expertise }}</p>
+                      </div>
+  
+  
+  
+  
+  
+                    </div>
+                  </div>
+  
+                  <div>
+                    <div class="container px-2  mx-auto">
+                      <div class="mb-3 w-full ">
+                        <div
+                          class=" border-garay-700 border-2  px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 " style="height: 13rem;">
+  
+                          <div class="flex space-x-4 mb-3">
+                            <div class=" w-1/3  rounded-lg px-1 ">
+  
+  
+                              <div class="flex  space-x-4" style="margin-left: 4rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Marque</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.marque }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 5.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Type</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.type }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Puiss</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.Puiss }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 " style="margin-left: -4rem;">Index K</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.index }}</p>
+                              </div>
+                            </div>
+  
+                            <div class=" w-1/3  rounded-lg">
+  
+                              <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Genre</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.genre }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 1.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Couleur</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.couleur }}</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 2.2rem;">
+                                <h1 class="title-font   font-medium text-gray-900 "style="margin-left: -1rem;">Etat veh</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.etat }}</p>
+                              </div>
+                        
+  
+                              <div class="flex  space-x-4" style="margin-left: -2rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Immob</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">{{ this.firstFormGroup.value.immob}}</p>
+                              </div>
+  
+  
+  
+  
+  
+                            </div>
+                            <div class=" w-1/3  rounded-lg">
+  
+                              <div class="flex  space-x-4" style="margin-left: 2.8rem;">
+                                <h1 class="title-font   font-medium text-gray-900 "style="margin-left: -2rem;">N° Chassis</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+  
+                              <div class="flex  space-x-4" style="margin-left: 3.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 "style="margin-left: -4rem;">Date 1er M.C</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                           
+  
+                              <div class="flex  space-x-4" style="margin-left: -0.5rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Circonstance</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 10rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                              <div class="flex  space-x-2" style="margin-left: -4rem;">
+                                <h1 class="title-font   font-medium text-gray-900 ">Dos</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                <h1 class="title-font   font-medium text-gray-900 " style="margin-left: 1.8rem;">Cont</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+  
+  
+  
+  
+                            </div>
+                          </div>
+                        </div>
+  
+                      </div>
+  
+                    </div>
+                  </div>
+                
+                 
+                   
+                   
+  
+                </div>
+                 <!-- Table  -->
+                 <div>
+                  <div class="container px-2  mx-auto">
+                    <div class="mb-3 w-full ">
+                      <div
+                        class=" border-garay-700 border-2    rounded-lg overflow-hidden text-center relative mb-3 " style="height: 50rem;">
+  
+                        <div class="flex  mb-3 h-full">
+                          
+  
+                          <div class=" w-full    border-gray-300 border-2 h-full">
+                          <div class="flex">
+                            <div class=" w-40 h-16   border-gray-300 border-2 ">
+                              <h1 class="text-xs mb-1">Accord avec</h1>
+                              <div class="px-4"> 
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                            </div>
+                            <div class="w-full h-16 border-gray-300 border-2"> 
+                            <h1>Estimation des travaux</h1>
+                            <p>(Sous réserve des garanties des responsabilités)</p>
+                            </div>
+                        
+                          </div>
+                          <div class="flex">
+                            <div class=" w-40  px-1 border-gray-300 border-2 " style="height: 38.5rem;">
+                              <h1 class="text-xs mb-1 py-2">Accord avec</h1>
+                              <div class="bg-gray-300 h-24 w-full border-gray-400 border-2"></div>
+                              <h1 class="text-xs mb-1 py-2">Accord avec</h1>
+                              <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                              style="width: 9rem;  background-color: #e2e8f0;">zouhaier</p>
+                            </div>
+                            
+                            <!-- Right tab -->
+                            <div class=" w-1/2   border-gray-300 border-2 h-full">
+                              <div class="     border-gray-300 border-2 flex" style="height: 19.5rem; width: 28rem;">
+                                
+                                <div class="w-1/3">
+                                  <h1 class=" text-gray-900 mb-3 bg-blue-100 text-xs">Désignation des
+                                    fournitures</h1>
+                                    <p class=" pl-2 py-1 h-8 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                    style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                    <p class=" pl-2 py-1 h-8 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                    style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                    <p class=" pl-2 py-1 h-8 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                    style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                    <p class=" pl-2 py-1 h-8 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                    style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                </div>
+                                <div class="w-1/3">
+                                  <h1 class=" text-gray-900 mb-8 bg-blue-100 text-xs">Montant</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                </div>
+                                <div class="w-1/3">
+                                  <h1 class=" text-gray-900 mb-8 bg-blue-100 text-xs">V%</h1>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                  <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                  style="width: 7rem;  background-color: #e2e8f0;">zouhaier</p>
+                                </div>
+                              </div>      
+  
+                             <div  class=" w-full   border-gray-300 border-2 " style="height: 18.8rem;" >
+                                <h1>Nature des chocs et dégats</h1>
+                                   <div >
+                                    <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-4"
+                                    style="width: 27rem;  background-color: #e2e8f0; height: 16rem;">zouhaier</p>
+                                 </div>
+                             </div>                    
+                            </div>
+                            <!-- Left tab -->
+                            <div class=" w-46  border-gray-300 border-2 "style="height: 38.4rem; width: 19rem;">
+                              <h1 class="py-2">Main d'oeuvre</h1>
+                              <div class="flex  space-x-4" style="margin-left: 3.5rem;">
+                                <h1 class="text-xs  mb-3">Tolerie</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                style="width: 10.5rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 2rem;">
+                                <h1 class="text-xs mb-3">Mécanique</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                style="width: 10.5rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 2.4rem;">
+                                <h1 class="text-xs mb-3">Electricité</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                style="width: 10.5rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 2.2rem;">
+                                <h1 class="text-xs mb-3">Tapisserie</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                style="width: 10.5rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                                <h1 class="text-xs mb-3">Boisserie</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                                style="width:10.5rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                              <div class="flex  space-x-4" style="margin-left: 2.9rem;">
+                                <h1 class="text-xs mb-3">Peinture</h1>
+                                <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                                style="width: 10.5rem;  background-color: #e2e8f0;">zouhaier</p>
+                              </div>
+                            <hr>
+                            <div class="flex  space-x-4" style="margin-left: 2rem;">
+                              <h1 class="text-xs mb-3">Total M.O</h1>
+                              <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                              style="width: 11rem;  background-color: #e2e8f0;">zouhaier</p>
+                            </div>
+                            <div class="flex  space-x-4" style="margin-left: 1.9rem;">
+                              <h1 class="text-xs mb-3">Total Four</h1>
+                              <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                              style="width: 11rem;  background-color: #e2e8f0;">zouhaier</p>
+                            </div>
+                            <div class="flex  space-x-4" style="margin-left: 2.5rem;">
+                              <h1 class="text-xs mb-3">Total GL</h1>
+                              <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                              style="width: 11rem;  background-color: #e2e8f0;">zouhaier</p>
+                            </div>
+                            <div class="flex  space-x-4" style="margin-left: 1.6rem;">
+                              <h1 class="text-xs mb-3">Déd. Vétus</h1>
+                              <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                              style="width: 11rem;  background-color: #e2e8f0;">zouhaier</p>
+                            </div>
+                          <hr>
+                          <div class="flex  space-x-4" style="margin-left: 2rem;">
+                            <h1 class="text-xs mb-3">Boisserie</h1>
+                            <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                            style="width: 11rem;  background-color: #e2e8f0;">zouhaier</p>
+                          </div>
+                          <div class="flex  space-x-4" style="margin-left: 2.1rem;">
+                            <h1 class="text-xs mb-3">Total Net</h1>
+                            <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-2"
+                            style="width: 11rem;  background-color: #e2e8f0;">zouhaier</p>
+                          </div>
+                          
+                          <div>
+                            <h1 class="title-font   font-medium text-gray-900 ">Expert</h1>
+                            <p>Nom et Prénom</p>
+                            <p class=" pl-2 py-1 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  "
+                            style="width: 12.5rem;  background-color: #e2e8f0; margin-left: 2rem;">zouhaier</p>
+                          </div>
+                          
+                            </div>
+                            
+                           
+                          </div>
+                          <div class="py-2">
+                            <h1>Avis sur les relations entre les corconstances déclarées et les dégats constatés</h1>
+                            <h1>Expertise effectuée avant, pendant , après réparations (1,2 ou les 3)</h1>
+                          </div>
+                        
+                          </div>
+                         
+                        </div>
+                        
+                      </div>
+  
+                    </div>
+  
+                  </div>
+                </div>
+  
+  
+  
+              </div>
+            </div>
+          </ng-container>
+            <!-- End Rapport  -->
+  
+            <div class=" px-2 py-3 ">
+  
+              <button
+                class="w-64 font-bold  flex-shrink-0 text-white border-gray-300 border-2 bg-gray-500 rounded py-0  focus:outline-none hover:text-white hover:bg-blue-400 rounded text-lg mt-10 sm:mt-0"
+                style="margin-left:390px" matStepperNext>VALIDER</button>
+  
+  
+            </div>
+          </div>
+  
+          </form>
+        </mat-step>
+      </mat-horizontal-stepper>
+  
+    </div>
+  
+  
+    <div style="margin-top: 4rem;">
+      <app-table-item></app-table-item>
+    </div>

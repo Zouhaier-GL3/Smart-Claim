@@ -1,0 +1,19 @@
+.center {margin-left: 28rem;}
+.align{align-items: center}
+.mat-input-element {max-width: none;}
+.table-fixed {
+    table-layout: fixed;
+  }
+
+  
+  ::-webkit-scrollbar{
+      height: 4px;
+      width: 4px;
+      background: gray;
+  }
+  ::-webkit-scrollbar-thumb:horizontal{
+  
+      background: #1E90FF;
+      border-radius: 10px;
+  }
+  

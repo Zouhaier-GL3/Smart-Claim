@@ -1,0 +1,52 @@
+<div class="flex p-3 " style="align-items: center; margin-left: 480px;">
+     
+    <img src="./../../assets/profile-user .svg" class="w-12 h-12"/>
+   <h1 class="text-blue-500 font-bold px-3 py-3 text-2xl">Paramètres du compte</h1>
+</div>
+  <section id="settings" class=" h-64 bg-white flex flex-row flex-wrap  item-center" style="width:750px; margin-left: 250px;">
+
+    <div style="margin-left: 190px;" class="">
+      
+      
+      <app-message></app-message>
+      <div *ngIf="!currentSettings" class="m-auto">
+        <h1 class="text-center display-3 mt-5">
+          <i class="fa fa-spinner fa-spin"></i>
+        </h1>
+      </div>
+      <div *ngIf="currentSettings" class="card bg-light">
+        <div class="card-body">
+          <form>
+            <div class="form-group">
+              <label class="form-control-label">Nom</label>
+              <input type="text" name="name" class="mb-4 bg-gray-300 w-full px-3 py-1 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" [(ngModel)]="currentSettings.name">
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Email</label>
+              <input type="email" name="email" class="mb-4 bg-gray-300 w-full px-3 py-1 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" [(ngModel)]="currentSettings.email">
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="checkbox" name="isSeller" class="mb-4 form-check-input" [(ngModel)]="currentSettings.isSeller"> Rôle Assureur ?
+              </label>
+            </div>
+            <hr>
+            <div class="form-group">
+              <label class="form-control-label">Nouveau mot de pass</label>
+              <input type="password" name="newPwd" class="mb-4 bg-gray-300 w-full px-3 py-1 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" [(ngModel)]="currentSettings.newPwd">
+            </div>
+            <div class="form-group">
+              <label class="form-control-label">Confirmer le mot de passe</label>
+              <input type="password" name="pwdConfirm" class="mb-4 bg-gray-300 w-full px-3 py-1 placeholder-gray-500 border border-gray-300 rounded-md focus:outline-none focus:ring focus:ring-indigo-100 focus:border-indigo-300 dark:bg-gray-700 dark:text-white dark:placeholder-gray-500 dark:border-gray-600 dark:focus:ring-gray-900 dark:focus:border-gray-500" [(ngModel)]="currentSettings.pwdConfirm">
+            </div>
+            <div class="px-32">
+            <button type="button" class="  inline-block px-6 py-2 font-medium leading-7 text-center text-blue-700 uppercase transition bg-transparent border-2 border-blue-700 rounded-full shadow ripple hover:shadow-lg hover:bg-blue-100 focus:outline-none" (click)="update()" [disabled]="btnDisabled">Confirmer</button>
+            </div>
+        </form>
+        </div>
+      </div>
+    </div>
+    
+  </section>
+  
+  

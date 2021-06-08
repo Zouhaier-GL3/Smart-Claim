@@ -1,0 +1,101 @@
+<div class="h-screen w-screen flex bg-white">
+    <!-- container d -->
+  
+    <aside
+      class="flex flex-col items-center text-gray-700 shadow h-full w-20 bg-blue-600">
+      <!-- Side Nav Bar-->
+  
+      <div class="h-16 flex items-center w-full mb-8 px-3">
+        <!-- Logo Section -->
+        <a class="h-6 w-full mx-auto" href="">
+          <img src="./../assets/Logo.svg" />
+        </a>
+      </div>
+      <div *ngIf="token"  >
+        <!-- Action Section -->
+          <img 
+            class="  rounded-full w-12 " style="margin-left: 15px;"
+            [src]="data.user.picture" alt="userimage"
+            alt=""
+          />
+      <span *ngIf="data.user" class="text-white  font-medium" style=" margin-left:1px; font-size: 9px;">{{ data.user.name }}</span>
+      </div>
+  
+      <ul>
+        <!-- Items Section -->
+        <li class="hover:bg-gray-100">
+          <a
+                      routerLink="/agent" routerLinkActive="active"
+            class="h-16 px-6 flex flex justify-center items-center w-full hover:bg-blue-500  
+            focus:text-orange-500" >
+            
+            <img src="./../assets/home-icon.svg" class="text-white" />
+  
+          </a>
+        </li>
+  
+        <li class="hover:bg-gray-100">
+          <a routerLink="/expert" routerLinkActive="active"
+            class="h-16 px-6 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+            <img src="./../assets/chat.svg" />
+  
+          </a>
+        </li>
+  
+        <li class="hover:bg-gray-100">
+          <a
+            href="."
+            class="h-16 px-6 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+  
+            <img src="./../assets/credit-card.svg" />
+  
+          </a>
+        </li>
+  
+        <li class="hover:bg-gray-100">
+          <a  *ngIf="token"
+              (click)="closeDropdown(dropdown);collapse();" routerLink="/profile" routerLinkActive="active"
+            class="h-16 px-6 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+            <img src="./../assets/settings.svg" />
+  
+          </a>
+        </li>
+  
+    
+  
+      </ul>
+      
+      
+  
+  
+    <div  id="navbarNav" style="margin-top:90px">
+    <div	ngbDropdown #dropdown="ngbDropdown">
+    
+      
+      <div *ngIf="!token" >
+        <a>
+               <img class="w-12  h-8" style="margin-left: 17px; margin-top: 120px;" src="./../assets/in.svg" />
+        </a>
+      </div>
+      <div *ngIf="token"  >
+        <a>
+               <img style="margin-left: 20px;" class="w-12 h-8" src="./../assets/out.svg" />
+        </a>
+      </div>
+      <div >
+        <div class=" px-4 "><a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/login" routerLinkActive="active" ><span  class="text-white font-medium"style="  font-size: 12px;">Connexion</span></a></div>
+        <div class=" px-4"> <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/register" routerLinkActive="active"><span  class="text-white font-medium"style="  font-size: 12px;">Inscription</span></a></div>
+        <div class=" px-4 "><a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile" routerLinkActive="active"><span  class="text-white font-medium"style="  font-size: 15px;">Profile</span></a></div>
+        <div class=" px-4 "><a *ngIf="token" (click)="closeDropdown(dropdown);collapse();logout();" ><span  class="text-white font-medium"style="  font-size: 15px;">Quiter</span></a></div>
+      </div>
+    </div>
+  </div>
+    </aside>
+  
+ 
+  
+  </div>
+

@@ -1,0 +1,2389 @@
+<style>
+  .mat-input-element {
+    font: inherit;
+    background: none;
+  }
+</style>
+<mat-horizontal-stepper  [linear]="isLinear" #stepper>
+
+  <mat-step  [stepControl]="firstFormGroup">
+
+    <form [formGroup]="firstFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0 mb-2" style="margin-left: 20px;">Informations Générales</h1>
+      <div class="flex mx-auto flex-wrap mb-5  shadow-lg container">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center  border-b-2 title-font  bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t font-bold">
+          Date
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Localisation
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Blessés
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Témoins
+        </a>
+      </div>
+      <div style="margin-left: 14rem;">
+        <!-- <mat-form-field appearance="fill" style="margin-left: -10px;">
+        <div><mat-label>Date de l'accident</mat-label></div>
+        <input matInput [matDatepicker]="picker" formControlName="date" class="docs-date w-full pl-4  py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600 font-medium bg-gray-300 mb-3">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field> -->
+        <mat-form-field>
+          <div><label>Date de l'accident</label></div>
+            <div class="relative">
+              <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-white" style="margin-top: -0.5rem;">
+                <img src="https://img.icons8.com/material-sharp/24/000000/calendar--v2.png"/>
+              </div>
+            <input type="text"  mdbInput matInput formControlName="date"
+            required  class=" pl-5 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;" id="datepicker" readonly>
+          </div>
+        </mat-form-field>
+        <br />
+        <mat-form-field>
+          <div><label>Date de l'accident</label></div>
+            <div class="relative">
+              <div class="inline-flex items-center justify-center absolute left-0 top-0 h-full w-10 text-white" style="margin-top: -0.5rem;">
+                <img src="https://img.icons8.com/material/24/000000/clock--v1.png"/>
+              </div>
+            <input type="text"  mdbInput matInput formControlName="heure" data-clocklet="format: h:mm a" value="1:23 pm"
+            required  class=" pl-5 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;" id="datepicker" readonly>
+          </div>
+        </mat-form-field>
+
+
+
+      </div>
+      <br /> <br /> <br />
+      <div class="flex">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px ; " matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="secondFormGroup">
+    <form [formGroup]="secondFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0 mb-2" style="margin-left: 20px;">Informations Générales</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Date
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Localisation
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Blessés
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Témoins
+        </a>
+      </div>
+      <div class="px-56">
+        <span class="left-0  mb-2 text-gray-700 block font-bold">Localisation</span>
+        <mat-form-field>
+          <div><label>Choisir un pays</label></div>
+          <input matInput formControlName="pays" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+
+        <mat-form-field>
+          <div><label>Lieu</label></div>
+          <textarea matInput formControlName="lieu" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+      </div>
+      <br /> <br />
+      <div class="flex" style="margin-top: -10px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="BlessesFormGroup">
+    <form [formGroup]="BlessesFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0 mb-2" style="margin-left: 20px;">Informations Générales</h1>
+      <div class="flex mx-auto flex-wrap mb-5 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Date
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Localisation
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Blessés
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Témoins
+        </a>
+      </div>
+      <span class="left-0 font-bold mb-0 text-gray-700 block" style="margin-left: 190px;">Blessés(s) meme
+        léger(s)</span>
+      <br />
+      <div class="px-56">
+        <mat-radio-group aria-label="Options" class="etat-bottom" formControlName="options">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <br />
+        <br /> <br /> <br />
+
+
+
+      </div>
+      <div class="flex">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="DegatsFormGroup">
+    <form [formGroup]="DegatsFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0 mb-2" style="margin-left: 20px;">Informations Générales</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Date
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Localisation
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Blessés
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Témoins
+        </a>
+      </div>
+      <span class="left-0 font-bold mb-0 text-gray-700 block" style="margin-left: 230px; ">Degats matériels a des</span>
+
+
+      <div class="px-56 overflow-auto h-48">
+        <span class="left-0  mb-2 text-black block">Vehicules autres que A et B</span>
+        <mat-radio-group aria-label="Options" formControlName="option1">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+        <span class="left-0  mb-2 text-black block">Objets autres que vehicules</span>
+        <mat-radio-group aria-label="Options" formControlName="option2">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+      </div>
+      <br /> <br />
+      <div class="flex" style="margin-top: -100;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="TemoinsFormGroup">
+
+    <form [formGroup]="TemoinsFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0 mb-2" style="margin-left: 20px;">Informations Générales</h1>
+      <div class="flex mx-auto flex-wrap mb-8 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Date
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Localisation
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Blessés
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-medium bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Témoins
+        </a>
+      </div>
+      <div class="px-56 overflow-auto h-48">
+        <mat-form-field>
+          <div><label>Nom</label></div>
+          <input matInput formControlName="name" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+
+        <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <div><label>N°Télephone </label></div>
+          <input matInput formControlName="phone" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+      </div> <br /> <br /> <br /> <br />
+      <div class="flex" style="margin-top: -40px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="AssureVAFormGroup">
+
+    <form [formGroup]="AssureVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4" style="margin-left: 170px;">Preneur
+        d'assurance/assure(voir attestation)</span>
+      <div class="px-56 overflow-auto h-48">
+
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Prénom</label></div>
+          <input matInput formControlName="prenom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Code postal</label></div>
+          <input matInput formControlName="code" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone </label></div>
+          <input matInput formControlName="phone" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+      </div> <br /> <br />
+      <div class="flex " style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="VehiculeVAFormGroup">
+
+    <form [formGroup]="VehiculeVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold mb-2" style="margin-left:280px">Véhicule </span>
+      <div class="px-56 overflow-auto h-48">
+
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">A Moteur</span>
+
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Prénom</label></div>
+          <input matInput formControlName="prenom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">Remarque</span>
+        <mat-form-field>
+          <div><label>Nom</label></div>
+          <input matInput formControlName="code" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone </label></div>
+          <input matInput formControlName="phone" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+      </div>
+      <br /> <br /> <br />
+      <div class="flex" style="margin-top: -30px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="AssuranceVAFormGroup">
+
+    <form [formGroup]="AssuranceVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4" style="margin-left: 160px;">Société
+        d'assurance(voir attestation d'asurace) </span>
+      <div class="px-56 overflow-auto h-48">
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°de contrat</label></div>
+          <input matInput formControlName="num" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°de carte verte</label></div>
+          <textarea matInput formControlName="cart" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">Valable:</span>
+        <div class="flex " style="margin-left: -170px;">
+
+          <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4 w-16 px-2">Du:</span>
+          <mat-form-field>
+            <input matInput type="date" formControlName="du" required
+              class="w-32 pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+              style="background-color: #e2e8f0;">
+          </mat-form-field>
+          <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4 w-16 px-2" style=" margin-left: 25px;">Au:</span>
+          <mat-form-field>
+            <input matInput type="date" formControlName="au" required
+              class="w-32 pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+              style="background-color: #e2e8f0; ">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <div><label>Nom</label></div>
+          <input matInput formControlName="nom2" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Pays</label></div>
+          <input matInput formControlName="pays" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Agence(ou bureau)</label></div>
+          <input matInput formControlName="agence" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone</label></div>
+          <input matInput formControlName="tel" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">Les dégats matérieles au véhicule sont-ils assures pas
+          le contrat ?:</span>
+        <mat-radio-group aria-label="Options" formControlName="options">
+          <mat-radio-button value="oui">Oui</mat-radio-button>
+          <mat-radio-button value="non">Non</mat-radio-button>
+        </mat-radio-group>
+      </div> <br /> <br />
+      <div class="flex" style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+
+  <mat-step [stepControl]="ConducteurVAFormGroup">
+
+    <form [formGroup]="ConducteurVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4" style="margin-left: 180px;">Conducteur(Voir permis
+        de conduite) </span>
+      <div class="px-56 overflow-auto h-48">
+
+
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Prénom</label></div>
+          <input matInput formControlName="prenom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Date"</label></div>
+          <input matInput type="date" formControlName="date" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+
+        <mat-form-field>
+          <div><label>Localisation</label></div>
+          <input matInput formControlName="localisation" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Tel 1</label></div>
+          <input matInput formControlName="phone1" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Tel 2</label></div>
+          <input matInput formControlName="phone2" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>type</label></div>
+          <input matInput formControlName="type" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Permis valable jusqu'au:</label></div>
+          <input matInput type="date" formControlName="val" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+
+
+      </div> <br /> <br />
+      <div class="flex" style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="PointVAFormGroup">
+
+    <form [formGroup]="PointVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4" style="margin-left: 120px;">Indiquer point de choc
+        initial au véhicule A par une fleche </span>
+      <div class="px-56 overflow-auto h-48">
+
+
+        <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt="" src="./../../assets/choc.jpg">
+        <mat-form-field>
+          <div><label>Commentaire</label></div>
+          <textarea matInput formControlName="commentaire" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+
+      </div> <br /> <br />
+      <div class="flex" style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="DegatsVAFormGroup">
+
+    <form [formGroup]="DegatsVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Circonstances
+        </a>
+        <a
+          class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Croquis
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Observations
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Signatures
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold px-48 mb-4">Deagats apparents au véhicule B</span>
+      <div class="px-56 ">
+
+
+        <mat-form-field>
+          <div><label>Dégats</label></div>
+          <textarea matInput rows="6" formControlName="degats" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+
+      </div> <br />
+      <div class="flex" style="margin-top: -10px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="CirconstancesFormGroup">
+    <form [formGroup]="CirconstancesFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Circonstances
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Croquis
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Observations
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Signatures
+        </a>
+      </div>
+
+      <span class="left-0   text-gray-700 block font-bold px-40 mb-0">Mettre une croix dans chacune des cases </span>
+      <span class="left-0   text-gray-700 block font-bold px-40 mb-2" style="margin-left:50px">utiles pour préciser le
+        croquis</span>
+
+      <div class="px-4 overflow-auto h-48">
+        <span class="ml-2 text-black">Roulait sur une place a sens giratoire </span>
+        <mat-radio-group aria-label="Options" formControlName="options1">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Heurtait a l'arrière, en roulant dans le meme sens et sur une meme file</span>
+        <mat-radio-group aria-label="Options" formControlName="options2">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Roulait dans le meme sens et sur une file différente</span>
+        <mat-radio-group aria-label="Options" formControlName="options3">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Changeait de file</span>
+        <mat-radio-group aria-label="Options" formControlName="options4">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Doublait</span>
+        <mat-radio-group aria-label="Options" formControlName="options5">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Virait a droite</span>
+        <mat-radio-group aria-label="Options" formControlName="options6">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Roulait sur une place a sens giratoire </span>
+        <mat-radio-group aria-label="Options" formControlName="options7">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Heurtait a l'arrière, en roulant dans le meme sens et sur une meme file</span>
+        <mat-radio-group aria-label="Options" formControlName="options8">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Roulait dans le meme sens et sur une file différente</span>
+        <mat-radio-group aria-label="Options" formControlName="options9">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Doublait</span>
+        <mat-radio-group aria-label="Options" formControlName="options10">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Changeait de file</span>
+        <mat-radio-group aria-label="Options" formControlName="options11">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Virait a gauche</span>
+        <mat-radio-group aria-label="Options" formControlName="options12">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Reculait</span>
+        <mat-radio-group aria-label="Options" formControlName="options13">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Empiétait sur une voie reservéea la circulation en sens inverse</span>
+        <mat-radio-group aria-label="Options" formControlName="options14">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Venait de droite (dans un carrefour)</span>
+        <mat-radio-group aria-label="Options" formControlName="options15">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">N'avait pas observé un signal depriorité ou de feu rouge</span>
+        <mat-radio-group aria-label="Options" formControlName="options16">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+        <br />
+        <span class="ml-2 text-black">Indiquer le nombre de cases marquees d'une croix</span>
+        <mat-radio-group aria-label="Options" formControlName="options17">
+          <div>
+            <mat-radio-button value="oui">Oui</mat-radio-button>
+          </div>
+          <div>
+            <mat-radio-button value="non">Non</mat-radio-button>
+          </div>
+        </mat-radio-group>
+
+      </div>
+      <br /> <br />
+
+      <div class="flex " style="margin-top: -30px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>
+
+  <mat-step [stepControl]="CroquisVAFormGroup">
+
+    <form [formGroup]="CroquisVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Circonstances
+        </a>
+        <a
+          class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Croquis
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Observations
+        </a>
+        <a
+          class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Signatures
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold px-40 mb-4">Croquis de l'accident au moment du choc
+      </span>
+      <div class="px-56 overflow-auto h-48">
+
+
+        <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt=""
+          src="./../../assets/Croquis.jpg">
+        <mat-form-field>
+          <div><label>Commentaire</label></div>
+          <textarea matInput formControlName="commentaire" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+
+      </div><br /><br />
+      <div class="flex" style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="ObservationsVAFormGroup">
+
+    <form [formGroup]="ObservationsVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Circonstances
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Croquis
+        </a>
+        <a
+          class="sm:px-6 py-3 w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Observations
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Signatures
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold px-64 mb-4">Mes Observations</span>
+      <div class="px-56 ">
+
+
+        <mat-form-field>
+          <div><label>Observations</label></div>
+          <textarea matInput rows="6" formControlName="observations" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+
+      </div><br />
+      <div class="flex" style="margin-top: -10px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="SignaturesVAFormGroup">
+
+    <form [formGroup]="SignaturesVAFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule A</h1>
+
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Dégats
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Circonstances
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Croquis
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Observations
+        </a>
+        <a
+          class="sm:px-6 py-3 w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Signatures
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold px-56 mb-2"> Signature du conducteur</span>
+      <div class="px-56 overflow-auto h-48">
+
+
+        <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt=""
+          src="./../../assets/signature.jpg">
+        <mat-form-field>
+          <div><label>Commentaire</label></div>
+          <textarea matInput formControlName="commentaire" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </textarea>
+        </mat-form-field>
+
+      </div><br /><br />
+      <div class="flex" style="margin-top: -10px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+
+  <mat-step [stepControl]="AssureVBFormGroup">
+
+    <form [formGroup]="AssureVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4" style="margin-left: 170px;">Preneur
+        d'assurance/assure(voir attestation)</span>
+      <div class="px-56 overflow-auto h-48">
+
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Prénom</label></div>
+          <input matInput formControlName="prenom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Code postal</label></div>
+          <input matInput formControlName="code" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone </label></div>
+          <input matInput formControlName="phone" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+      </div><br /><br />
+      <div class="flex" style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="VehiculeVBFormGroup">
+
+    <form [formGroup]="VehiculeVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold mb-2" style="margin-left:280px">Véhicule </span>
+      <div class="px-56 overflow-auto h-48">
+
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">A Moteur</span>
+
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Prénom</label></div>
+          <input matInput formControlName="prenom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">Remarque</span>
+        <mat-form-field>
+          <div><label>Nom</label></div>
+          <input matInput formControlName="code" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone </label></div>
+          <input matInput formControlName="phone" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+      </div>
+      <br><br /><br />
+      <div class="flex" style="margin-top: -30px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <mat-step [stepControl]="AssuranceVBFormGroup">
+
+    <form [formGroup]="AssuranceVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Assuré
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Véhicule
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+          Assurance
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          Conducteur
+        </a>
+        <a
+          class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+          point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4" style="margin-left: 160px;">Société
+        d'assurance(voir attestation d'asurace) </span>
+      <div class="px-56 overflow-auto h-48">
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput formControlName="nom" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°de contrat</label></div>
+          <input matInput formControlName="num" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°de carte verte</label></div>
+          <textarea matInput formControlName="cart" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">Valable:</span>
+        <div class="flex " style="margin-left: -170px;">
+
+          <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4 w-16 px-2">Du:</span>
+          <mat-form-field>
+            <input matInput type="date" formControlName="du" required
+              class="w-32 pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+              style="background-color: #e2e8f0;">
+          </mat-form-field>
+          <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4 w-16 px-2" style=" margin-left: 25px;">Au:</span>
+          <mat-form-field>
+            <input matInput type="date" formControlName="au" required
+              class="w-32 pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+              style="background-color: #e2e8f0; ">
+          </mat-form-field>
+        </div>
+        <mat-form-field>
+          <div><label>Nom</label></div>
+          <input matInput formControlName="nom2" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput formControlName="adresse" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+          </textarea>
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Pays</label></div>
+          <input matInput formControlName="pays" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Agence(ou bureau)</label></div>
+          <input matInput formControlName="agence" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°Télephone</label></div>
+          <input matInput formControlName="tel" required
+            class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+            style="background-color: #e2e8f0;">
+        </mat-form-field>
+        <span class="left-0  mb-2 text-gray-700 block  px-0 mb-4">Les dégats matérieles au véhicule sont-ils assures pas
+          le contrat ?:</span>
+        <mat-radio-group aria-label="Options" formControlName="options">
+          <mat-radio-button value="oui">Oui</mat-radio-button>
+          <mat-radio-button value="non">Non</mat-radio-button>
+        </mat-radio-group>
+      </div><br /><br />
+      <div class="flex" style="margin-top: -20px;">
+        <button
+          class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:120px" matStepperPrevious>Retour</button>
+        <button
+          class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+          style="margin-left:220px" matStepperNext>Suivant</button>
+      </div>
+    </form>
+
+  </mat-step>
+  <!-- 
+
+  <mat-step [stepControl]="ConducteurVBFormGroup">
+   
+    <form [formGroup]="ConducteurVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Assuré
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Véhicule
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Assurance
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+         Conducteur
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4"style="margin-left: 190px;">Conducteur(Voir permis de conduite) </span>
+      <div class="px-56 overflow-auto h-48">
+        
+            
+        <mat-form-field>
+          <div><label>Nom </label></div>
+          <input matInput  formControlName="nom" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Prénom</label></div>
+          <input matInput  formControlName="prenom" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+         <mat-form-field>
+          <div><label>Date"</label></div>
+          <input matInput type="date" formControlName="date" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+       <mat-form-field>
+          <div><label>Adresse</label></div>
+          <textarea matInput  formControlName="adresse" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+          </textarea>
+        </mat-form-field>
+       
+         <mat-form-field>
+          <div><label>Localisation</label></div>
+          <input matInput  formControlName="localisation" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Tel 1</label></div>
+          <input matInput formControlName="phone1" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Tel 2</label></div>
+          <input matInput  formControlName="phone2" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>N°</label></div>
+          <input matInput  formControlName="type" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+        <mat-form-field>
+          <div><label>Permis valable jusqu'au:</label></div>
+          <input matInput type="date" formControlName="val" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </mat-form-field>
+
+        
+      </div><br/><br/>
+      <div class="flex" style="margin-top: -20px;">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form>
+  
+  </mat-step>
+
+  <mat-step [stepControl]="PointVBFormGroup">
+   
+    <form [formGroup]="PointVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Assuré
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Véhicule
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Assurance
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Conducteur
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+         point de choc
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold  mb-4"style="margin-left: 120px;">Indiquer point de choc initial au véhicule A par une fleche  </span>
+      <div class="px-56 overflow-auto h-48">
+        
+            
+      <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt="" src="./../../assets/choc.jpg">
+      <mat-form-field>
+        <div><label>Commentaire</label></div>
+        <textarea matInput  formControlName="commentaire" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </textarea>
+      </mat-form-field>
+        
+      </div><br/><br/>
+      <div class="flex" style="margin-top: -20px;">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form>
+  
+  </mat-step>
+  
+  <mat-step [stepControl]="DegatsVBFormGroup">
+   
+    <form [formGroup]="DegatsVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+         Dégats
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Circonstances
+        </a>
+        <a class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Croquis
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Observations
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Signatures
+        </a>
+      </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold px-48 mb-4">Deagats apparents au véhicule B</span>
+      <div class="px-56 ">
+        
+     
+      <mat-form-field>
+        <div><label>Dégats</label></div>
+        <textarea matInput rows="6"  formControlName="degats" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </textarea>
+      </mat-form-field>
+        
+      </div><br/><br/>
+      <div class="flex" style="margin-top: -30px;">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form>
+  
+  </mat-step> 
+
+  <mat-step [stepControl]="CirconstancesBFormGroup">
+    <form [formGroup]="CirconstancesBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      
+        <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Dégats
+          </a>
+          <a class="sm:px-6 py-3  w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+           Circonstances
+          </a>
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Croquis
+          </a>
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Observations
+          </a>
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Signatures
+          </a>
+        </div>
+
+        <span class="left-0   text-gray-700 block font-bold px-40 mb-0">Mettre une croix dans chacune des cases  </span>
+        <span class="left-0   text-gray-700 block font-bold px-40 mb-2" style="margin-left:50px">utiles pour préciser le croquis</span>
+     
+      <div class="px-4 overflow-auto h-48">
+      <span class="ml-2 text-black">Roulait sur une place a sens giratoire </span>
+      <mat-radio-group aria-label="Options" formControlName="options1">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+       <div><mat-radio-button value="non">Non</mat-radio-button></div>
+      </mat-radio-group>
+      <br/>
+      <span class="ml-2 text-black">Heurtait a l'arrière, en roulant dans le meme sens et sur une meme file</span>
+      <mat-radio-group aria-label="Options" formControlName="options2">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+       <div><mat-radio-button value="non">Non</mat-radio-button></div>
+      </mat-radio-group>
+      <br/>
+      <span class="ml-2 text-black">Roulait dans le meme sens et sur une file différente</span>
+      <mat-radio-group aria-label="Options" formControlName="options3">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Changeait de file</span>
+       <mat-radio-group aria-label="Options" formControlName="options4">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Doublait</span>
+       <mat-radio-group aria-label="Options" formControlName="options5">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Virait a droite</span>
+       <mat-radio-group aria-label="Options" formControlName="options6">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Roulait sur une place a sens giratoire </span>
+       <mat-radio-group aria-label="Options" formControlName="options7">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Heurtait a l'arrière, en roulant dans le meme sens et sur une meme file</span>
+       <mat-radio-group aria-label="Options" formControlName="options8">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Roulait dans le meme sens et sur une file différente</span>
+       <mat-radio-group aria-label="Options" formControlName="options9">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Doublait</span>
+       <mat-radio-group aria-label="Options" formControlName="options10">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Changeait de file</span>
+       <mat-radio-group aria-label="Options" formControlName="options11">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Virait a gauche</span>
+       <mat-radio-group aria-label="Options" formControlName="options12">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Reculait</span>
+       <mat-radio-group aria-label="Options" formControlName="options13">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+       <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Empiétait sur une voie reservéea la circulation en sens inverse</span>
+       <mat-radio-group aria-label="Options" formControlName="options14">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+       <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Venait de droite (dans un carrefour)</span>
+       <mat-radio-group aria-label="Options" formControlName="options15">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">N'avait pas observé un signal depriorité ou de feu rouge</span>
+       <mat-radio-group aria-label="Options" formControlName="options16">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       <span class="ml-2 text-black">Indiquer le nombre de cases marquees d'une croix</span>
+       <mat-radio-group aria-label="Options" formControlName="options17">
+        <div><mat-radio-button value="oui">Oui</mat-radio-button></div>
+        <div><mat-radio-button value="non">Non</mat-radio-button></div>
+       </mat-radio-group>
+       <br/>
+       </div>
+      
+      <br/><br/>
+      <div class="flex" style="margin-top: -30px;">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form>
+  </mat-step>  
+
+  <mat-step [stepControl]="CroquisVBFormGroup">
+   
+    <form [formGroup]="CroquisVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Dégats
+        </a>
+        <a class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Circonstances
+        </a>
+        <a class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+         Croquis
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Observations
+        </a>
+        <a class="sm:px-6 py-3 sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Signatures
+        </a>
+      </div>
+    <span class="left-0  mb-2 text-gray-700 block font-bold px-40 mb-4">Croquis de l'accident au moment du choc </span>
+      <div class="px-56 overflow-auto h-48">
+        
+            
+      <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt="" src="./../../assets/Croquis.jpg">
+      <mat-form-field>
+        <div><label>Commentaire</label></div>
+        <textarea matInput  formControlName="commentaire" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </textarea>
+      </mat-form-field>
+        
+      </div><br/><br/>
+      <div class="flex" style="margin-top: -20px;">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form>
+  
+  </mat-step> 
+  <mat-step [stepControl]="ObservationsVBFormGroup">
+   
+    <form [formGroup]="ObservationsVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+      <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Dégats
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Circonstances
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Croquis
+        </a>
+        <a class="sm:px-6 py-3 w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+         Observations
+        </a>
+        <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+         Signatures
+        </a>
+      </div>
+    <span class="left-0  mb-2 text-gray-700 block font-bold px-64 mb-4">Mes Observations</span>
+      <div class="px-56 ">
+        
+     
+      <mat-form-field>
+        <div><label>Observations</label></div>
+        <textarea matInput rows="6"  formControlName="observations" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+      </mat-form-field>
+        
+      </div><br/>
+      <div class="flex" style="margin-top: -40px;">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form>
+  
+  </mat-step>    
+  <mat-step [stepControl]="SignaturesVBFormGroup">
+   
+    <form [formGroup]="SignaturesVBFormGroup">
+      <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+
+        <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Dégats
+          </a>
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Circonstances
+          </a>
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Croquis
+          </a>
+          <a class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+           Observations
+          </a>
+          <a class="sm:px-6 py-3 w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+           Signatures
+          </a>
+        </div>
+      <span class="left-0  mb-2 text-gray-700 block font-bold px-56 mb-2"> Signature du conducteur</span>
+      <div class="px-56 overflow-auto h-48">
+        
+            
+      <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt="" src="./../../assets/signature.jpg">
+      <mat-form-field>
+        <div><label>Commentaire</label></div>
+        <textarea matInput  formControlName="commentaire" required class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3" style="background-color: #e2e8f0;" >
+        </textarea>
+      </mat-form-field>
+        
+      </div><br/>
+      <div class="flex">
+        <button class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:120px"  matStepperPrevious>Retour</button>
+        <button class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0" style="margin-left:220px"  matStepperNext>Suivant</button>
+      </div>
+    </form >
+  </mat-step>     -->
+  <mat-step [stepControl]="SignaturesVBFormGroup">
+    <h1 class="text-gray-700 font-bold px-56 py-0  mb-2" style="margin-left: 59px;">Véhicule B</h1>
+
+    <div class="flex mx-auto flex-wrap mb-3 shadow-lg">
+      <a
+        class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+        Dégats
+      </a>
+      <a
+        class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+        Circonstances
+      </a>
+      <a
+        class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+        Croquis
+      </a>
+      <a
+        class="sm:px-6 py-3  sm:w-auto justify-center sm:justify-start border-b-2 title-font  inline-flex items-center leading-none border-gray-200 hover:text-gray-900 tracking-wider">
+        Observations
+      </a>
+      <a
+        class="sm:px-6 py-3 w-32 sm:w-auto justify-center sm:justify-start border-b-2 title-font font-bold bg-gray-100 inline-flex items-center leading-none border-blue-500 text-black tracking-wider rounded-t">
+        Signatures
+      </a>
+    </div>
+    <span class="left-0  mb-2 text-gray-700 block font-bold px-56 mb-2"> Signature du conducteur</span>
+    <div class="px-56 overflow-auto h-48">
+
+
+      <img class="align-self-center  mr-3" style=" width:300px; height:205px;" alt=""
+        src="./../../assets/signature.jpg">
+      <mat-form-field>
+        <div><label>Commentaire</label></div>
+        <textarea matInput formControlName="commentaire" required
+          class=" pl-4 py-2 leading-none rounded-lg shadow-sm focus:outline-none focus:shadow-outline text-gray-600  mb-3"
+          style="background-color: #e2e8f0;">
+    </textarea>
+      </mat-form-field>
+
+    </div><br />
+    <div class="flex" style="margin-top: 20px;">
+      <button
+        class="font-bold  flex-shrink-0 text-blue-600 bg-white border-blue-500 border-2 text-blue-600 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+        style="margin-left:120px" matStepperPrevious>Retour</button>
+      <button
+        class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-4 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+        style="margin-left:220px" onclick="document.getElementById('id01').style.display='block'">Suivant</button>
+    </div>
+    <!-- Popup Modal 1 -->
+    <form [formGroup]="SignaturesVBFormGroup">
+      <div id="id01" class="w3-modal">
+        <div class="w3-modal-content rounded-lg px-48 py-24">
+          <header class="mb-8 font-bold text-black" style="margin-left:190px">
+            <span onclick="document.getElementById('id01').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+          </header>
+          <div class="mb-8" style="margin-left:150px">
+            <div class="mt-2 content-evenly ">
+              <label>
+                <input type="radio" class="form-radio" name="accountType" value="busines">
+                <span class="ml-2 text-black">En attente de confirmation</span>
+              </label>
+            </div>
+            <div class="mt-2 content-evenly ">
+              <label>
+                <input type="radio" class="form-radio" name="accountType" value="busines">
+                <span class="ml-2 text-black">Incomplet</span>
+              </label>
+            </div>
+          </div>
+
+          <div>
+            <button
+              class="font-bold  flex-shrink-0 text-white bg-blue-500 border-1 py-0 px-8 focus:outline-none hover:bg-blue-600 rounded text-lg mt-10 sm:mt-0"
+              style="margin-left:180px"
+              onclick="document.getElementById('id02').style.display='block'">Continuer</button>
+          </div>
+
+        </div>
+      </div>
+    </form>
+    <!-- Popup Modal 2 -->
+    <form>
+
+      <div id="id02" class="w3-modal" style="padding-top: 0px; ">
+        <div class="w3-modal-content rounded-lg ">
+          <header class=" font-bold text-black">
+            <span onclick="document.getElementById('id02').style.display='none'"
+              class="w3-button w3-display-topright">&times;</span>
+
+          </header>
+
+          <div>
+
+            <div class="container px-6 py-4 mx-auto flex">
+              <img class="align-self-center  mr-3  " style=" width:50px; height:50px;  margin-left:50px;" alt=""
+                src="./../../assets/QR-code.png">
+              <a (click)="printPage()"><img src="./../../assets/pdf.png" alt="Pdf"
+                  style=" width:50px; height:45px; margin-left:270px;"></a>
+              <img class="align-self-center  mr-3 " style=" width:70px; height:50px; margin-left:300px;" alt=""
+                src="./../../assets/login-smart.png">
+            </div>
+            <div class="container items-center justify-center ">
+              <h2 class="text-xs title-font font-bold text-blue-600 text-xl  sm:text-2xl px-32"
+                style=" margin-left:100px;">CONSTAT AMIABLE D'ACCIDENT AUTOMOBILE </h2>
+              <h2 class="text-xs title-font font-bold text-blue-600 text-xl  sm:text-2xl px-64"
+                style="  margin-left:120px;">(NUMÉRIQUE)</h2>
+            </div>
+
+
+            <div class="text-gray-600 body-font">
+              <div>
+                <div class="container px-2 py-4 mx-auto">
+                  <div class="mb-8 w-full ">
+                    <div
+                      class=" border-garay-700 border-2 h-56 px-2 pt-4 rounded-lg overflow-hidden text-center relative mb-3 ">
+                      <h2 class="tracking-widest text-xs title-font font-bold text-blue-600 text-xl mb-3">Informations
+                        générales</h2>
+                      <div class="flex space-x-4 mb-3">
+                        <div class=" w-1/2  rounded-lg px-1 py-2">
+                          <div class="flex  space-x-4">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Date</h1>
+                            <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg w-64 border-blue-600 border-2 ">{{
+                              this.firstFormGroup.value.date }}</p>
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Heure</h1>
+                            <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg w-56 border-blue-600 border-2">{{
+                              this.firstFormGroup.value.heure }}</p>
+
+                          </div>
+
+                          <div class="flex  space-x-4">
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Témoins</h1>
+                            <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg w-64 border-blue-600 border-2">{{
+                              this.TemoinsFormGroup.value.name }} </p>
+
+                            <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg w-56 border-blue-600 border-2">{{
+                              this.TemoinsFormGroup.value.phone }}</p>
+                          </div>
+                          <p class="leading-relaxed  bg-gray-200 rounded-lg w-full h-12 border-blue-600 border-2">{{
+                            this.TemoinsFormGroup.value.adresse }}</p>
+                        </div>
+                        <div class=" w-1/2  rounded-lg">
+
+                          <div class="flex  space-x-4">
+
+                            <h1 class="title-font   font-medium text-gray-900 mb-3">Localisation</h1>
+                            <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg w-32 border-blue-600 border-2">{{
+                              this.secondFormGroup.value.pays }}</p>
+                            <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg w-32 border-blue-600 border-2">{{
+                              this.secondFormGroup.value.lieu }}</p>
+                          </div>
+                          <div class="flex  space-x-4 ">
+                            <h1 class="  font-medium text-gray-900 mb-2">Blessé(s) meme léger(s) </h1>
+                            <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-16 border-blue-600 border-2"> {{
+                              this.BlessesFormGroup.value.options }}</p>
+                          </div>
+                          <div class="flex  space-x-4">
+                            <h1 class="   font-medium text-gray-900 mb-2">Véhicules autres que A et B</h1>
+                            <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-16 border-blue-600 border-2"> {{
+                              this.DegatsFormGroup.value.option1 }}</p>
+                          </div>
+                          <div class="flex  space-x-4">
+                            <h1 class="  font-medium text-gray-900 mb-2">Objets autres que des véhicules </h1>
+                            <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-16 border-blue-600 border-2"> {{
+                              this.DegatsFormGroup.value.option2 }}</p>
+                          </div>
+
+
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                  <div class="flex flex-wrap -m-4">
+                    <div class="p-4 w-1/3">
+                      <div
+                        class="h-full border-garay-700 border-2 bg-opacity-75 px-2 pt-4 rounded-lg overflow-hidden text-center relative">
+                        <h2 class="tracking-widest text-xs title-font font-bold text-blue-600 text-xl mb-1">Vehicule A
+                        </h2>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Assuré</h1>
+                        <div class="flex space-x-4 ">
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssureVAFormGroup.value.nom }}</p>
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssureVAFormGroup.value.prenom }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.AssureVAFormGroup.value.adresse }}</p>
+                        <div class="flex space-x-4 ">
+                          <p class="py-1 leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">
+                            2017</p>
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssureVAFormGroup.value.code }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2 ">{{
+                          this.AssureVAFormGroup.value.phone }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Véhicule</h1>
+                        <p class="leading-relaxed mb-2 ">A Moteur</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVAFormGroup.value.nom }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVAFormGroup.value.prenom }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVAFormGroup.value.adresse }}</p>
+                        <p class="leading-relaxed mb-2 ">Remarque</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVAFormGroup.value.code }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVAFormGroup.value.phone }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-3">société d'assurance</h1>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.nom }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.num }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.cart }}</p>
+                        <p class="leading-relaxed mb-2 ">Valable:</p>
+                        <div class="flex space-x-4 ">
+                          Du:
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssuranceVAFormGroup.value.du }}</p>
+                          Au:
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssuranceVAFormGroup.value.au }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.agence }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.nom2 }}</p>
+
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.adresse }}</p>
+
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.pays }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVAFormGroup.value.tel }}</p>
+                        <p class="leading-relaxed mb-2 ">Les dégats matérieles au véhicule sont-ils assures pas le
+                          contrat ?</p>
+                        <div style="margin-left:15px;">
+                          <p class=" leading-relaxed mb-2 bg-gray-200 rounded-lg w-24 border-blue-600 border-2">{{
+                            this.AssuranceVAFormGroup.value.options }}</p>
+                        </div>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-3">Conducteur</h1>
+                        <div class="flex space-x-4 ">
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.ConducteurVAFormGroup.value.nom }}</p>
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.ConducteurVAFormGroup.value.prenom }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVAFormGroup.value.date }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.ConducteurVAFormGroup.value.aderesse }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVAFormGroup.value.localisation }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVAFormGroup.value.phone1 }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVAFormGroup.value.type }}</p>
+                        <div class="flex space-x-4 px-2">
+                          valable jusqu'a:
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-48 border-blue-600 border-2">{{
+                            this.ConducteurVAFormGroup.value.val }}</p>
+                        </div>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Point de choc</h1>
+                        <img class="align-self-center w-full mr-3" style="  height:135px;" alt=""
+                          src="./../../assets/choc.jpg">
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Dégats</h1>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.DegatsVAFormGroup.value.degats }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Observations</h1>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.ObservationsVAFormGroup.value.observations }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Signatures</h1>
+                        <img class="align-self-center w-full mr-3" style="  height:90px;" alt=""
+                          src="./../../assets/signature.jpg">
+
+
+                      </div>
+                    </div>
+                    <div class="  flex  rounded-lg py-2  border-garay-700 border-2">
+                      <div class=" w-2 h-full  bg-opacity-75 px-8 pt-16 rounded-lg ">
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-8"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options1 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-6 "
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options2 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-8"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options3 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-12"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options4 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-12"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options5 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-16"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options6 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-16"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options7 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-10"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options8 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options9 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options10 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options11 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options12 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options13 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-10"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options14 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-6"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options15 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-6"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options16 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesFormGroup.value.options17 }}</div>
+                      </div>
+                      <div class="h-full  bg-opacity-75 px-2 pt-4 rounded-lg overflow-hidden text-center relative "
+                        style="width:160px">
+
+                        <h2 class="tracking-widest text-xs title-font font-bold text-blue-600 text-xl mb-1">
+                          Circonstances</h2>
+                        <p class="leading-relaxed mb-3 pt-3 text-sm ">En stationnement /à l'arret</p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">Quittait un stationnement/ouvrait une portière</p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">Prenait un stationnement</p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">Sortait d'un park/d'un lieu privé/d'un chemin de terre
+                        </p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">S'engageait dans un parking/un lieu privé/un chemin de
+                          terre</p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">S'engageait sur une place a sens giratoire </p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">Heurtait a l'arrière, en roulant dans le meme sens et
+                          sur une meme file</p>
+                        <hr>
+                        <p class="leading-relaxed mb-16 text-sm ">Roulait dans le meme sens et sur une file différente
+                        </p>
+                        <hr>
+                        <p class="leading-relaxed mb-8 text-sm ">Changeait de file</p>
+                        <hr>
+                        <p class="leading-relaxed mb-10 text-sm ">Doublait</p>
+                        <hr>
+                        <p class="leading-relaxed mb-8 text-sm ">Virait a droite</p>
+                        <hr>
+                        <p class="leading-relaxed mb-12 text-sm ">Virait a droite</p>
+                        <hr>
+                        <p class="leading-relaxed mb-6 text-sm ">Reculait</p>
+                        <hr>
+                        <p class="leading-relaxed mb-3 text-sm ">Empiétait sur une voiereserve a la circulation en sens
+                          inverse</p>
+                        <hr>
+                        <p class="leading-relaxed mb-3 text-sm ">Venait de droite (dans un carrefour)</p>
+                        <hr>
+                        <p class="leading-relaxed mb-3 text-sm ">N'avait pas observé un signal de priorité ou de feu
+                          rouge</p>
+                        <hr>
+                        <p class="leading-relaxed mb-3 text-sm ">Indiquer le nombre de cases marquées</p>
+
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-3"
+                          style="padding-top: 5rem; width:350px;margin-left:-85px;">Croquis de l'accident</h1>
+                        <img class="align-self-center  mr-3 w-full" style="  height:150px;" alt=""
+                          src="./../../assets/Croquis.jpg">
+
+
+
+                      </div>
+                      <div class=" w-4 h-full  bg-opacity-75 px-8 pt-16 rounded-lg overflow-hidden  relative ">
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-8"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options1 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-6 "
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options2 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-8"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options3 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-12"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options4 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-12"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options5 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-16"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options6 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-16"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options7 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-10"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options8 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options9 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options10 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options11 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options12 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options13 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-10"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options14 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-6"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options15 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-6"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options16 }}</div>
+                        <div
+                          class="rounded-full h-12 w-12 flex items-center justify-center bg-blue-600 text-white font-medium border-blue-600 border-2 mb-3"
+                          style="margin-left:-25px;">{{ this.CirconstancesBFormGroup.value.options17 }}</div>
+                      </div>
+                    </div>
+                    <div class="p-4 w-1/3">
+                      <div
+                        class="h-full border-garay-700 border-2 bg-opacity-75 px-2 pt-4 rounded-lg overflow-hidden text-center relative">
+                        <h2 class="tracking-widest text-xs title-font font-bold text-blue-600 text-xl mb-1">Vehicule B
+                        </h2>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Assuré</h1>
+                        <div class="flex space-x-4 ">
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssureVBFormGroup.value.nom }}</p>
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssureVBFormGroup.value.prenom }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.AssureVBFormGroup.value.adresse }}</p>
+                        <div class="flex space-x-2 ">
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">2017</p>
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssureVBFormGroup.value.code }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssureVBFormGroup.value.phone }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-3">Véhicule</h1>
+                        <p class="leading-relaxed mb-2 ">A Moteur</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVBFormGroup.value.nom }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVBFormGroup.value.prenom }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVBFormGroup.value.adresse }}</p>
+                        <p class="leading-relaxed mb-2 ">Remarque</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVBFormGroup.value.code }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.VehiculeVBFormGroup.value.phone }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-3">société d'assurance</h1>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.nom }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.num }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.cart }}</p>
+                        <p class="leading-relaxed mb-2 ">Valable:</p>
+                        <div class="flex space-x-4 ">
+                          Du:
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssuranceVBFormGroup.value.du }}</p>
+                          Au:
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.AssuranceVBFormGroup.value.au }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.agence }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.nom2 }}</p>
+
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.adresse }}</p>
+
+                        <p class="leading-relaxed mb-3 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.pays }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.AssuranceVBFormGroup.value.tel }}</p>
+                        <p class="leading-relaxed mb-2 ">Les dégats matérieles au véhicule sont-ils assures pas le
+                          contrat ?</p>
+                        <div style="margin-left:15px;">
+                          <p class=" leading-relaxed mb-2 bg-gray-200 rounded-lg w-24 border-blue-600 border-2">{{
+                            this.AssuranceVBFormGroup.value.options }}</p>
+                        </div>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-3">Conducteur</h1>
+                        <div class="flex space-x-4 ">
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.ConducteurVBFormGroup.value.nom }}</p>
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-1/2 border-blue-600 border-2">{{
+                            this.ConducteurVBFormGroup.value.prenom }}</p>
+                        </div>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVBFormGroup.value.date }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.ConducteurVBFormGroup.value.aderesse }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVBFormGroup.value.localisation }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVBFormGroup.value.phone1 }}</p>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg border-blue-600 border-2">{{
+                          this.ConducteurVBFormGroup.value.type }}</p>
+                        <div class="flex space-x-4 px-2">
+                          valable jusqu'a:
+                          <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg w-48 border-blue-600 border-2 ">{{
+                            this.ConducteurVBFormGroup.value.val }}</p>
+                        </div>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Point de choc</h1>
+                        <img class="align-self-center w-full mr-2" style="  height:135px;" alt=""
+                          src="./../../assets/choc.jpg">
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Dégats</h1>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.DegatsVBFormGroup.value.degats }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Observations</h1>
+                        <p class="leading-relaxed mb-2 bg-gray-200 rounded-lg h-12 border-blue-600 border-2">{{
+                          this.ObservationsVBFormGroup.value.observations }}</p>
+                        <h1 class="title-font  text-xl font-medium text-gray-900 mb-2">Signatures</h1>
+                        <img class="align-self-center w-full mr-3" style="  height:90px;" alt=""
+                          src="./../../assets/signature.jpg">
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </form>
+
+  </mat-step>
+
+</mat-horizontal-stepper>

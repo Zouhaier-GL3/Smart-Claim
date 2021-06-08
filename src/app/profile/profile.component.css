@@ -1,0 +1,17 @@
+.slider {
+    width: 300px;
+    height: 300px;
+    display: flex;
+    overflow-x: auto;
+  }
+  .slide {
+    width: 300px;
+    flex-shrink: 0;
+    height: 100%;
+  }
+  .horizontal-scroll-wrapper {
+    width: 50px;
+    height: 150px;
+    overflow-y: auto;
+    overflow-x: hidden;
+  }

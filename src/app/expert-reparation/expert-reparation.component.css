@@ -1,0 +1,7 @@
+.center {margin-left: 28rem;}
+.align{align-items: center}
+.mat-input-element {max-width: none;}
+.table-fixed {
+    table-layout: fixed;
+  }
+ 

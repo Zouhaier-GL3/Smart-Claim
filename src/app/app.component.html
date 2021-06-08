@@ -1,0 +1,141 @@
+<div class="h-screen w-screen flex bg-white">
+    <!-- container -->
+  
+    <aside
+      class="flex flex-col items-center text-gray-700 shadow h-full w-16 bg-blue-600">
+      <!-- Side Nav Bar-->
+  
+      <div class="h-16 flex items-center w-full mb-12 px-2 pt-4">
+        <!-- Logo Section -->
+        <a class="h-6 w-full mx-auto"  routerLink="/home" routerLinkActive="active">
+          <img src="./../assets/Logo.svg" />
+        </a>
+      </div>
+      <!-- Action Section -->
+      <!-- <div *ngIf="token"  >
+        
+          <img 
+            class="  rounded-full w-12 " style="margin-left: 10px;"
+            [src]="data.user.picture" alt="userimage"
+            alt=""
+          />
+      <span *ngIf="data.user" class="text-white  font-medium" style=" margin-left:1px; font-size: 9px;">{{ data.user.name }}</span>
+      </div> -->
+  
+      <ul class="my-6">
+        <!-- Items Section -->
+        <li>
+          <div class="notification_wrap" *ngIf="token"
+          (click)="closeDropdown(dropdown);collapse();">
+          <div>
+            <div class="notification_icon ">
+              <i class="fas fa-bell "></i>
+            </div>
+          </div>
+            <div class="dropdown ">
+              <div class="w-full bg-blue-500 h-6 "><div class="px-24 flex "><img src="./../assets/bouton-notification.svg" class="h-4 w-4 my-1"><h1 class="text-white px-2">Notifications</h1></div></div>
+              <div class="px-0 bg-blue-100" >
+                <table mdbTable>
+                  <tbody>
+                    <tr mdbTableCol *ngFor="let el of elements"  (click)="sharedService.onPress()" class="tableRow">
+                      <td>
+                         <p class="text-xs">{{el.first}}</p>              
+                      </td>
+                      <td>
+                         <p class="text-xs">{{el.etat_dossier}}</p>             
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li class="hover:bg-gray-100 mb-2">
+          <a *ngIf="token"
+          (click)="closeDropdown(dropdown);collapse();"
+           
+            class="h-16 px-2 flex flex justify-center items-center w-full hover:bg-blue-500  
+            focus:text-orange-500" >
+            <img src="./../assets/profile.svg" class="text-white w-6 h-6" />
+          </a>
+          
+        </li>
+   
+        <!-- <li class="hover:bg-gray-100">
+          <a  *ngIf="token"
+              (click)="closeDropdown(dropdown);collapse();" routerLink="/" routerLinkActive="active"
+            class="h-16 px-2 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+            <img src="./../assets/bouton-notification.svg" />
+  
+          </a>
+        </li> -->
+        <li class="hover:bg-gray-100">
+          <a  *ngIf="token"
+          (click)="closeDropdown(dropdown);collapse();" routerLink="/" routerLinkActive="active"
+            class="h-16 px-2 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+            <img src="./../assets/chat.svg" class="text-white w-6 h-6"/>
+  
+          </a>
+        </li>
+  
+        <li class="hover:bg-gray-100">
+          <a *ngIf="token"
+          (click)="closeDropdown(dropdown);collapse();"  routerLink="/expert" routerLinkActive="active"
+            class="h-16 px-2 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+  
+            <img src="./../assets/credit-card.svg" class="text-white w-6 h-6"/>
+  
+          </a>
+        </li>
+  
+        <li class="hover:bg-gray-100">
+          <a  *ngIf="token"
+              (click)="closeDropdown(dropdown);collapse();" routerLink="/profile" routerLinkActive="active"
+            class="h-16 px-3 flex flex justify-center items-center w-full hover:bg-blue-500
+            focus:text-orange-500">
+            <img src="./../assets/settings copy.svg" class="text-white w-6 h-6"/>
+  
+          </a>
+        </li>
+  
+    
+  
+      </ul>
+      
+      
+  
+  
+    <div  id="navbarNav" class="my-24 ">
+      <div	ngbDropdown #dropdown="ngbDropdown">
+    
+      
+      <div *ngIf="!token" style="padding-top: 22rem;" >
+        <a>
+               <img class="w-8  h-8 mb-2" style=" margin-left:35px; " src="./../assets/power-button.svg" />
+        </a>
+      </div>
+      <div *ngIf="token" style="padding-top: 5rem; margin-left: 10px;" >
+        <a *ngIf="token" routerLink="/login" routerLinkActive="active" 
+        (click)="closeDropdown(dropdown);collapse();logout();"
+        >
+               <img  class="w-6 h-6 mb-2" style=" margin-left:3px; " src="./../assets/exit.svg" />
+        </a>
+      </div>
+      <div >
+        <div class=" px-4 "><a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/login" routerLinkActive="active" ><span  class="text-white font-medium"style="  font-size: 12px;">Connexion</span></a></div>
+        <div class=" px-4"> <a *ngIf="!token" (click)="closeDropdown(dropdown);collapse();" routerLink="/register" routerLinkActive="active"><span  class="text-white font-medium"style="  font-size: 12px;">Inscription</span></a></div>
+        <!-- <div class=" px-4 "><a *ngIf="token" (click)="closeDropdown(dropdown);collapse();" routerLink="/profile" routerLinkActive="active"><span  class="text-white font-medium"style="  font-size: 15px;">Profile</span></a></div> -->
+        <!-- <div class=" px-4 "><a *ngIf="token" (click)="closeDropdown(dropdown);collapse();logout();" ><span  class="text-white font-medium"style="  font-size: 15px;">Quiter</span></a></div> -->
+      </div>
+    </div>
+  </div>
+    </aside>
+  
+ 
+  <router-outlet></router-outlet>
+  </div>
+

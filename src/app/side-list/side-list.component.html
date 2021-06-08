@@ -1,0 +1,69 @@
+
+<div  *ngIf='!sharedService.display' class="flex-container">
+  <div *ngIf="sharedService.display"><app-table-item></app-table-item></div>
+
+  <span class="tri"><i class="pi pi-sort-alt"></i>&nbsp;  Tri</span>
+  <mat-radio-group name="date">
+    <mat-radio-button value="date-des" (click) ="onFilterClickAsc()">Date <i class="pi pi-sort-amount-down"></i>
+    </mat-radio-button>
+    <mat-radio-button value="date-asc" (click) ="onFilterClickDes()">Date <i class="pi pi-sort-amount-up"></i>
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <mat-radio-group name="etat" class="etats" >
+    <mat-radio-button (click)='onFilterClickEtatDes()' value="etat-des">Etat du dossier <i class="pi pi-sort-amount-down"></i>
+    </mat-radio-button>
+    <mat-radio-button (click)='onFilterClickEtatAsc()' value="etat-asc">Etat du dossier <i class="pi pi-sort-amount-up"></i>
+    </mat-radio-button>
+  </mat-radio-group>
+
+  <span class="filtre"><i class="fa fa-filter"></i>&nbsp;  Filtre</span>
+  <h6 id="titleEtat">Etat du dossier</h6>
+  <mat-radio-group name="filter" class="etat-bottom" [(ngModel)]="filter" (ngModelChange)="onChange($event)">
+    <mat-radio-button  value="attente">En attente de confirmation</mat-radio-button>
+    <mat-radio-button  value="traitement">En cours de traitement</mat-radio-button>
+    <mat-radio-button  value="validé">Validé</mat-radio-button>
+
+  </mat-radio-group>
+  <div class="companie" >
+    <h6 id="titleCompanie">Companie d'assurance</h6>
+  <div class="p-field-checkbox">
+      <p-checkbox name="group1" value="GAT" [(ngModel)]="filterCompany"
+       (ngModelChange)="onChangeCompany($event)" ></p-checkbox>
+      <label>GAT</label>
+  </div>
+  <div class="p-field-checkbox">
+      <p-checkbox name="group1" value ="COMAR" [(ngModel)]="filterCompany"
+      (ngModelChange)="onChangeCompany($event)"></p-checkbox>
+      <label>COMAR</label>
+  </div>
+  <div class="p-field-checkbox">
+      <p-checkbox name="group1" value="AMI" [(ngModel)]="filterCompany"
+      (ngModelChange)="onChangeCompany($event)"
+      ></p-checkbox>
+      <label >AMI</label>
+  </div>
+  <div class="p-field-checkbox">
+      <p-checkbox name="group1" value="CARTE" [(ngModel)]="filterCompany"
+      (ngModelChange)="onChangeCompany($event)"
+      ></p-checkbox>
+      <label>CARTE</label>
+  </div>
+  <div class="p-field-checkbox">
+    <p-checkbox name="group1" value="STAR" [(ngModel)]="filterCompany"
+    (ngModelChange)="onChangeCompany($event)"
+    ></p-checkbox>
+    <label >STAR</label>
+</div>
+<div class="p-field-checkbox">
+  <p-checkbox name="group1" value="BIAT" [(ngModel)]="filterCompany"
+       (ngModelChange)="onChangeCompany($event)"
+  ></p-checkbox>
+  <label>BIAT</label>
+</div>
+  
+</div>
+<div class="bottomButton">
+<button pButton pRipple type="button" label="Réinitialiser" class="p-button-raised"></button>
+</div>
+</div>
